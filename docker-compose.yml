@@ -1,0 +1,77 @@
+version: '3'
+services:
+
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vivacom/php
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./.docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:latest
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3008:80"
+      - "431:443"
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+  #MySQL Service
+  dba_nemc:
+    image: mysql:5.7.28
+    container_name: water_aid
+    restart: always
+    tty: true
+    ports:
+      - "3307:3306"
+    command: mysqld --default-authentication-plugin=mysql_native_password  
+    environment:
+      MYSQL_DATABASE: water_aid
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: water_aid_user
+      MYSQL_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dba_nemc:/var/lib/mysql
+      - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+  #REDIS Service
+  #redis:
+   # image: redis:latest
+    #container_name: redis
+    #ports:
+    #  - "6379:6379"
+  #  networks:
+  #    - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dba_nemc:
+    driver: local
