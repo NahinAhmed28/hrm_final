@@ -1,6 +1,6 @@
 
 @php
-    $user = Auth::user();
+    $user = auth('admin')->user();
 @endphp
 <div id="kt_header" class="header header-fixed">
     <!--begin::Container-->
