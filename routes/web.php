@@ -22,17 +22,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('users/get-data', [UserController::class, 'getData']);
-    Route::resource('/users', UserController::class);
-    Route::resource('/departments', DepartmentController::class);
-    Route::resource('/expenses', ExpenseController::class);
-    Route::post('/users_password', [UserController::class, 'changePassword'])->name('password.update');
-
-});

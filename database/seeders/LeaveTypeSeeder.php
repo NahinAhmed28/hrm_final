@@ -1,7 +1,9 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Leavetype;
+
+
 class LeaveTypeSeeder extends Seeder
 {
     /**
@@ -12,7 +14,7 @@ class LeaveTypeSeeder extends Seeder
     public function run()
     {
         \Illuminate\Support\Facades\DB::table('leavetypes')->truncate(); // deleting old records.
-        $faker = Faker\Factory::create();
+//        $faker = Faker\Factory::create();
 
 
         Leavetype::create([

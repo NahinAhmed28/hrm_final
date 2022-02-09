@@ -21,18 +21,19 @@ class UserController extends Controller
     protected $roleModel;
     const moduleDirectory = 'admin.users.';
 
-
-    public function __construct(User $user, Role $role)
-    {
-        $this->middleware('auth');
-        $this->redirectUrl = 'admin/users';
-        $this->userModel = $user;
-        $this->roleModel = $role;
-    }
+//
+//    public function __construct(User $user, Role $role)
+//    {
+//        $this->middleware('auth');
+//        $this->redirectUrl = 'admin/users';
+//        $this->userModel = $user;
+//        $this->roleModel = $role;
+//    }
 
 
     public function index() :View
     {
+
         $data = [
             'users' => $this->userModel->orderBy('id','asc')->simplePaginate(5),
             'roles' => $this->roleModel->orderBy('id','asc')->get(),

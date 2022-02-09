@@ -54,7 +54,7 @@
                         <h3 class="opacity-40 font-weight-normal">Sign In To Admin</h3>
                         <p class="opacity-40">Enter your details to login to your account:</p>
                     </div>
-                    <form class="form" id="kt_login_signin_form" method="post"  action="{{route('login')}}">
+                    <form class="form" id="kt_login_signin_form" method="post"  action="{{route('admin.login')}}">
                         @csrf
                         <div class="form-group">
                             <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"

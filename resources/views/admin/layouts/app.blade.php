@@ -8,7 +8,7 @@
 <script src="https://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 @php
-    $user = Auth::user();
+    $user = auth('admin')->user();
 @endphp
 <!--begin::Body-->
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed page-loading">
@@ -99,7 +99,7 @@
         <!--begin::Header-->
         <div class="d-flex align-items-center mt-5">
             <div class="symbol symbol-100 mr-5">
-                <div class="symbol-label" style="background-image:url({{asset('uploads/imageFiles/'.Auth::user()->image)}})"></div>
+                <div class="symbol-label" style="background-image:url({{asset('uploads/imageFiles/'.auth('admin')->user()->image)}})"></div>
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
@@ -146,7 +146,7 @@
         <!--begin::Nav-->
         <div class="navi navi-spacer-x-0 p-0">
             <!--begin::Item-->
-            <a href="{{route('admin.users.show', Auth::id())}}" class="navi-item">
+            <a href="{{route('admin.users.show', auth('admin')->id())}}" class="navi-item">
                 <div class="navi-link">
                     <div class="symbol symbol-40 bg-light mr-3">
                         <div class="symbol-label">
