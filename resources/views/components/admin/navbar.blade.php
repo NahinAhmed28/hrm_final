@@ -12,9 +12,9 @@
                 <!--begin::Header Nav-->
                 <ul class="menu-nav">
                     <li class="menu-item menu-item-active" aria-haspopup="true">
-                        <a href="{{url()->previous()}}" class="menu-link">
-                            <span class="menu-text">{{ucfirst(request()->segment(2))}}</span>
-                        </a>
+{{--                        <a href="{{url()->previous()}}" class="menu-link">--}}
+{{--                            <span class="menu-text">{{ucfirst(request()->segment(2))}}</span>--}}
+{{--                        </a>--}}
                     </li>
                 </ul>
                 <!--end::Header Nav-->

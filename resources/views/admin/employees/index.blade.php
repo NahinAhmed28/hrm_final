@@ -10,7 +10,7 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-header flex-wrap py-3">
                         <div class="card-title">
-                            <h3 class="card-label">Settings</h3>
+                            <h3 class="card-label">Departments</h3>
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
@@ -27,11 +27,10 @@
                             <thead >
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Website</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Logo</th>
-                                <th scope="col">Currency</th>
-                                <th scope="col">Currency icon</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">created at</th>
+                                <th scope="col">action</th>
+                                <th scope="col">status</th>
                             </tr>
                             </thead>
 
