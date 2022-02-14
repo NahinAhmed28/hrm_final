@@ -16,20 +16,23 @@ class ExpenseController extends Controller
     protected $expensetModel;
     const moduleDirectory = 'admin.users.';
 
-    public function __construct(User $user, Department $department, Expense $expense)
+    public function __construct( Department $department, Expense $expense)
     {
-        $this->middleware('auth');
+
         $this->redirectUrl = 'admin/users';
-        $this->userModel = $user;
         $this->departmentModel = $department;
         $this->expensetModel = $expense;
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function index()
     {
-//        $expenses = $this->expensetModel->orderBy('id','asc')->simplePaginate(5);
-//        return view('admin.expenses.index', compact('expenses'));
-        return view('admin.expenses.index');
+        $expenses = $this->expensetModel->orderBy('id','asc')->simplePaginate(5);
+        return view('admin.expenses.index', compact('expenses'));
+
     }
 
 

@@ -45,10 +45,24 @@
                     </a>
                 </li>
 
-                <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.expenses.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-sheet"></i>
-                        <span style="font-size: 15px;" class="menu-text">Expenses</span>
+                <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/awards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.awards.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-cup"></i>
+                        <span style="font-size: 15px;" class="menu-text">Award</span>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ (Request::is('admin/noticeboards') or Request::is('admin/noticeboards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.noticeboards.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-notepad"></i>
+                        <span style="font-size: 15px;" class="menu-text">Noticeboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ (Request::is('admin/settings') or Request::is('admin/settings/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.settings.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-notepad"></i>
+                        <span style="font-size: 15px;" class="menu-text">Settings</span>
                     </a>
                 </li>
 

@@ -15,7 +15,7 @@
                         <div class="card-toolbar">
                             <!--begin::Button-->
                             @can('create', \App\Models\Admin::class)
-                                <a href="{{route('admin.departments.create')}}" class="btn btn-success">
+                                <a href="{{route('admin.awards.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
                         @endcan
@@ -33,27 +33,7 @@
                                 <th scope="col">status</th>
                             </tr>
                             </thead>
-                            <tbody>
-                                @foreach($departments as $department)
-                                    <tr>
-                                        <td> {{$department->id }} </td>
-                                        <td> {{$department->name }} </td>
-                                        <td>{{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="View Student">
-                                                <button class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
-                                                </button></a>
-                                            <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View Student">
-                                                <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
-                                                </button></a>
-                                        </td>
-                                        <td> <span class="badge badge-success">{{$department->status == 0 ? '' : 'Active' }} </span>
-                                             <span class="badge badge-danger">{{$department->status == 1 ? '' : 'Inactive' }}</span>
-                                        </td>
-                                    </tr>
 
-                                @endforeach
-                            </tbody>
                         </table>
 
 

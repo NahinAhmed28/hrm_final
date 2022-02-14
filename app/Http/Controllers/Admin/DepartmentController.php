@@ -17,7 +17,7 @@ class DepartmentController extends Controller
 
     public function __construct(User $user, Department $department)
     {
-        $this->middleware('auth');
+
         $this->redirectUrl = 'admin/users';
         $this->userModel = $user;
         $this->departmentModel = $department;
@@ -26,9 +26,8 @@ class DepartmentController extends Controller
 
     public function index()
     {
-//        $departments = $this->departmentModel->orderBy('id','asc')->simplePaginate(5);
-//        return view('admin.departments.index', compact('departments'));
-        return view('admin.departments.index');
+        $departments = $this->departmentModel->orderBy('id','asc')->simplePaginate(5);
+        return view('admin.departments.index', compact('departments'));
     }
 
 
