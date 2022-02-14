@@ -61,7 +61,7 @@
 
                 <li class="menu-item {{ (Request::is('admin/settings') or Request::is('admin/settings/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.settings.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-notepad"></i>
+                        <i class="menu-icon flaticon2-settings"></i>
                         <span style="font-size: 15px;" class="menu-text">Settings</span>
                     </a>
                 </li>
