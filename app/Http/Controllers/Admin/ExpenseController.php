@@ -27,8 +27,9 @@ class ExpenseController extends Controller
 
     public function index()
     {
-        $expenses = $this->expensetModel->orderBy('id','asc')->simplePaginate(5);
-        return view('admin.expenses.index', compact('expenses'));
+//        $expenses = $this->expensetModel->orderBy('id','asc')->simplePaginate(5);
+//        return view('admin.expenses.index', compact('expenses'));
+        return view('admin.expenses.index');
     }
 
 

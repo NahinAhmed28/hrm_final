@@ -45,6 +45,13 @@
                     </a>
                 </li>
 
+                <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.expenses.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-sheet"></i>
+                        <span style="font-size: 15px;" class="menu-text">Expenses</span>
+                    </a>
+                </li>
+
 
 
             </ul>
