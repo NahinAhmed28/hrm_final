@@ -50,12 +50,9 @@ class ExpenseController extends Controller
 
         $value = $this->expensetModel->create([
             'itemName' => $request->itemName,
-            'purchaseDate' =>Carbon::parse($request->purchaseDate),
+            'purchaseDate' =>$request->purchaseDate,
             'purchaseFrom' => $request->purchaseFrom,
             'price' => $request->price,
-            'bill' => $request->bill,
-
-
 
         ]);
 

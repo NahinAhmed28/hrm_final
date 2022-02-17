@@ -31,7 +31,7 @@ class NoticeboardController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -43,12 +43,23 @@ class NoticeboardController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
-    }
+        $value = $this->noticeboardModel->create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+
+        if ($value) {
+            return back();
+        } else {
+
+            $expenses = $this->noticeboardModel->orderBy('id','asc')->get();
+            return view('admin.noticeboards.create', compact('expenses'));
+        }    }
 
     /**
      * Display the specified resource.

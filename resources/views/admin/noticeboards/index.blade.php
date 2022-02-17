@@ -27,25 +27,25 @@
                             <thead >
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Department</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">created at</th>
                                 <th scope="col">action</th>
-                                <th scope="col">status</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($notices as $notice)
                                 <tr>
                                     <td>{{ $notice->id }}</td>
-                                    <td>{{ $notice->name }}</td>
-                                    <td>{{ $notice->email }}</td>
+                                    <td>{{ $notice->title }}</td>
+                                    <td>{{ $notice->description }}</td>
                                     <td>{{ $notice->created_at->diffForHumans() }}</td>
                                     <td>{{ $notice->updated_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('admin.noticeboards.show',[$departement->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
 
-                                        <a href="{{ route('admin.noticeboards.edit',[$departement->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                        <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$departement->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
