@@ -71,6 +71,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Bill<span class="text-danger">*</span></label>
+                                            <input type="text" name="bill" class="form-control {{ $errors->has('bill') ? 'is-invalid' : '' }}" value="{{ old('bill') }}" placeholder="bill" />
+                                            @if ($errors->has('bill'))
+                                                <div class="invalid-feedback">{{ $errors->first('bill') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success mr-3"> <i class="flaticon2-paperplane"></i>Save</button>

@@ -47,9 +47,9 @@
                                         <label for="exampleSelect1">Role<span class="text-danger">*</span></label>
                                         <select class="form-control" name="role_id">
                                             <option value="" disabled>--Select--</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{$role->id}}" {{$role->id == $user->role_id ? 'selected' : ''}}>{{$role->name}}</option>
-                                            @endforeach
+{{--                                            @foreach($roles as $role)--}}
+{{--                                                <option value="{{$role->id}}" {{$role->id == $user->role_id ? 'selected' : ''}}>{{$role->name}}</option>--}}
+{{--                                            @endforeach--}}
                                         </select>
                                     </div>
                                 </div>

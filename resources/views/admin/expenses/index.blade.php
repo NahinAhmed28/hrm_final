@@ -13,11 +13,11 @@
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            @can('create', \App\Models\User::class)
+{{--                            @can('create', \App\Models\User::class)--}}
                                 <a href="{{route('admin.expenses.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
-                        @endcan
+{{--                        @endcan--}}
                         <!--end::Button-->
                         </div>
                     </div>

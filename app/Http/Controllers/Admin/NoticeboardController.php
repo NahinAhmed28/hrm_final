@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Admin;
+use App\Models\Department;
 use App\Models\Noticeboard;
 use Illuminate\Http\Request;
 
 class NoticeboardController extends Controller
 {
+    protected $noticeboardModel;
+    public function __construct(Noticeboard $noticeboard)
+    {
+        $this->noticeboardModel = $noticeboard;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +24,8 @@ class NoticeboardController extends Controller
      */
     public function index()
     {
-        return view('admin.noticeboards.index');
+        $notices = $this->noticeboardModel->orderBy('id','asc')->simplePaginate(5);
+        return view('admin.noticeboards.index', compact('notices'));
     }
 
     /**
@@ -26,7 +35,8 @@ class NoticeboardController extends Controller
      */
     public function create()
     {
-        //
+        $notices = $this->noticeboardModel->get();
+        return view('admin.noticeboards.create', compact('notices'));
     }
 
     /**

@@ -10,15 +10,15 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-header flex-wrap py-3">
                         <div class="card-title">
-                            <h3 class="card-label">Departments</h3>
+                            <h3 class="card-label">AWARDS</h3>
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            @can('create', \App\Models\Admin::class)
+{{--                            @can('create', \App\Models\Admin::class)--}}
                                 <a href="{{route('admin.awards.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
-                        @endcan
+{{--                            @endcan--}}
                         <!--end::Button-->
                         </div>
                     </div>
@@ -27,13 +27,40 @@
                             <thead >
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">created at</th>
-                                <th scope="col">action</th>
-                                <th scope="col">status</th>
+                                <th scope="col">employee ID</th>
+                                <th scope="col">award Name</th>
+                                <th scope="col">gift</th>
+                                <th scope="col">cash Price</th>
+                                <th scope="col">for Month</th>
+                                <th scope="col">for Year</th>
+                                <th scope="col">Created</th>
                             </tr>
                             </thead>
 
+                            <tbody>
+                            @foreach($awards as $award)
+                                <tr>
+                                    <td> {{$award->id }} </td>
+                                    <td> {{$award->employeeID }} </td>
+                                    <td> {{$award->awardName }} </td>
+                                    <td> {{$award->gift }} </td>
+                                    <td> {{$award->cashPrice }} </td>
+                                    <td> {{$award->forMonth }} </td>
+                                    <td> {{$award->forYear }} </td>
+                                    <td> {{$award->forYear }} </td>
+                                    <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.awards.edit',[$award->id]) }}" title="View Student">
+                                            <button class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
+                                            </button></a>
+                                        <a href="{{ route('admin.awards.show',[$award->id]) }}" title="View Student">
+                                            <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
+                                            </button></a>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+                            </tbody>
                         </table>
 
 

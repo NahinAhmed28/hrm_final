@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Admin;
 use App\Models\Department;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -13,9 +13,8 @@ class DepartmentController extends Controller
     protected $redirectUrl;
     protected $userModel;
     protected $departmentModel;
-    const moduleDirectory = 'admin.users.';
 
-    public function __construct(User $user, Department $department)
+    public function __construct(Admin $user, Department $department)
     {
 
         $this->redirectUrl = 'admin/users';
@@ -33,9 +32,9 @@ class DepartmentController extends Controller
 
     public function create()
     {
-//        $departments = $this->departmentModel->orderBy('id','asc')->get();
-//        return view('admin.departments.create', compact('departments'));
-        return view('admin.departments.create');
+        $departments = $this->departmentModel->orderBy('id','asc')->get();
+        return view('admin.departments.create', compact('departments'));
+
     }
 
 
@@ -44,7 +43,7 @@ class DepartmentController extends Controller
 //        dd($request->all());
 
         $value = $this->departmentModel->create([
-            'name' => $request->name,
+            'deptName' => $request->deptName,
         ]);
         if ($value) {
             return back();

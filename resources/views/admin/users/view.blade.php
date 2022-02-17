@@ -30,7 +30,7 @@
                                             </div>
                                             <div>
                                                 <a href="#" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary">{{$user->name}}</a>
-                                                <div class="text-muted">{{$user->role->name}}</div>
+                                                <div class="text-muted">{{$user->name}}</div>
                                             </div>
                                         </div>
                                         <!--end::User-->

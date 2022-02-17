@@ -4,11 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Admin;
 use App\Models\Award;
+use App\Models\Department;
 use Illuminate\Http\Request;
 
 class AwardController extends Controller
 {
+    protected $awardModel;
+
+    public function __construct(Award $award)
+    {
+
+
+        $this->awardModel = $award;
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,9 @@ class AwardController extends Controller
      */
     public function index()
     {
-        return view('admin.awards.index');
+        $awards = $this->awardModel->orderBy('id','asc')->simplePaginate(5);
+        return view('admin.awards.index', compact('awards'));
+
     }
 
     /**

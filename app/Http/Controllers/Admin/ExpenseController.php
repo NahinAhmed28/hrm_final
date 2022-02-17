@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Expense;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ExpenseController extends Controller
 {
@@ -38,7 +39,7 @@ class ExpenseController extends Controller
 
     public function create()
     {
-        $expenses = $this->expensetModel->orderBy('id','asc')->get();
+        $expenses = $this->expensetModel->get();
         return view('admin.expenses.create', compact('expenses'));
     }
 
@@ -49,13 +50,16 @@ class ExpenseController extends Controller
 
         $value = $this->expensetModel->create([
             'itemName' => $request->itemName,
-            'purchaseDate' => $request->purchaseDate,
+            'purchaseDate' =>Carbon::parse($request->purchaseDate),
             'purchaseFrom' => $request->purchaseFrom,
             'price' => $request->price,
+            'bill' => $request->bill,
 
 
 
         ]);
+
+
         if ($value) {
             return back();
         } else {

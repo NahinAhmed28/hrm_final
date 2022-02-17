@@ -24,13 +24,6 @@
                     </a>
                 </li>
 
-                <li class="menu-item {{ (Request::is('admin/users') or Request::is('admin/users/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.users.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-user"></i>
-                        <span style="font-size: 15px;" class="menu-text">Users</span>
-                    </a>
-                </li>
-
                 <li class="menu-item {{ (Request::is('admin/departments') or Request::is('admin/departments/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.departments.index')}}" class="menu-link">
                         <i class="menu-icon flaticon2-shield"></i>
@@ -66,6 +59,12 @@
                     </a>
                 </li>
 
+                <li class="menu-item {{ (Request::is('admin/users') or Request::is('admin/users/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.users.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user-1"></i>
+                        <span style="font-size: 15px;" class="menu-text">Admins </span>
+                    </a>
+                </li>
 
 
             </ul>

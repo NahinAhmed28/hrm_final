@@ -16,6 +16,7 @@ class Expense extends \Eloquent
     protected $fillable = ['itemName','purchaseFrom','purchaseDate','price'];
 
 
+
     protected $appends = ['bill_url'];
     public function sluggable()
     {
@@ -36,6 +37,8 @@ class Expense extends \Eloquent
     {
         $this->attributes['purchaseDate'] = Carbon::createFromFormat('d-m-Y', $value)->format('Y-m-d');
     }
+
+
 
 
 }

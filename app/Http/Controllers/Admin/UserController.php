@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequestValidation;
-use App\Models\User;
-use App\Models\Role;
+use App\Models\Admin;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -21,35 +21,29 @@ class UserController extends Controller
     protected $roleModel;
     const moduleDirectory = 'admin.users.';
 
-//
-//    public function __construct(User $user, Role $role)
-//    {
-//        $this->middleware('auth');
+
+    public function __construct(Admin $admin)
+    {
+
 //        $this->redirectUrl = 'admin/users';
-//        $this->userModel = $user;
-//        $this->roleModel = $role;
-//    }
+        $this->userModel = $admin;
+
+    }
 
 
     public function index() :View
     {
 
-        $data = [
-            'users' => $this->userModel->orderBy('id','asc')->simplePaginate(5),
-            'roles' => $this->roleModel->orderBy('id','asc')->get(),
-        ];
-        return view('admin.users.index', $data );
+        $users = $this->userModel->get();
+        return view('admin.users.index')->with('users', $users);
 
     }
 
 
     public function create()
     {
-        $data = [
-            'users' => $this->userModel->orderBy('id','asc')->get(),
-            'roles' => $this->roleModel->orderBy('id','asc')->get(),
-        ];
-        return view('admin.users.create', $data );
+        $users = $this->userModel->get();
+        return view('admin.users.create')->with('users', $users);
 
     }
 
@@ -109,11 +103,8 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $data = [
-            'user' => $this->userModel->find($id),
-            'roles' => $this->roleModel->get(),
-        ];
-        return view('admin.users.edit', $data );
+        $user = $this->userModel->find($id);
+        return view('admin.users.edit', compact('user') );
 
     }
 
@@ -152,9 +143,6 @@ class UserController extends Controller
         ]);
 
 
-
-
-
         if ($value){
 
             return redirect()->route('admin.users.index');
@@ -163,8 +151,6 @@ class UserController extends Controller
 
             return back();
         }
-
-
 
     }
 

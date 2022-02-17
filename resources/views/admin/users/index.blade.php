@@ -9,15 +9,15 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-header flex-wrap py-3">
                         <div class="card-title">
-                            <h3 class="card-label">User List</h3>
+                            <h3 class="card-label">ADMIN-User List</h3>
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            @can('create', \App\Models\User::class)
+{{--                            @can('create', \App\Models\User::class)--}}
                             <a href="{{route('admin.users.create')}}" class="btn btn-success">
                                 <i class="flaticon2-plus-1"></i> Add New
                             </a>
-                            @endcan
+{{--                            @endcan--}}
                             <!--end::Button-->
                         </div>
                     </div>
@@ -28,41 +28,41 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">created at</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Updated </th>
                                 <th scope="col">action</th>
-                                <th scope="col">status</th>
+{{--                                <th scope="col">status</th>--}}
                             </tr>
                             </thead>
                             <tbody>
 
                             @foreach($users as $user)
-                                <tr>
-                                    <th scope="row">{{$user->id}}</th>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->role->name}}</td>
-                                    <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.users.edit',[$user->id]) }}" title="View Student">
-                                            <button class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
-                                            </button></a>
-                                        <a href="{{ route('admin.users.show',[$user->id]) }}" title="View Student">
-                                            <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
-                                            </button></a>
-                                    </td>
-                                    <td> <span class="badge badge-success">{{$user->status == 0 ? '' : 'Active' }} </span>
-                                        <span class="badge badge-danger">{{$user->status == 1 ? '' : 'Inactive' }}</span>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->created_at->diffForHumans() }}</td>
+                                <td>{{ $user->updated_at->diffForHumans() }}</td>
+                                <td>
+                                    <a href="{{ route('admin.users.show',[$user->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+
+                                    <a href="{{ route('admin.users.edit',[$user->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                    <form method="POST" action="{{ route('admin.users.destroy' ,  [$user->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                             @endforeach
                             </tbody>
+
                         </table>
 
                         {{--pagination--}}
-                        <div class="d-flex justify-content-center">
-                            {!! $users->links() !!}
-                        </div>
+{{--                        <div class="d-flex justify-content-center">--}}
+{{--                            {!! $users->links() !!}--}}
+{{--                        </div>--}}
                         {{--end pagination--}}
                     </div>
                 </div>

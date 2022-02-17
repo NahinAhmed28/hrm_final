@@ -14,11 +14,11 @@
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            @can('create', \App\Models\Admin::class)
-                                <a href="{{route('admin.awards.create')}}" class="btn btn-success">
+{{--                            @can('create', \App\Models\Admin::class)--}}
+                                <a href="{{route('admin.noticeboards.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
-                        @endcan
+{{--                        @endcan--}}
                         <!--end::Button-->
                         </div>
                     </div>
@@ -33,6 +33,27 @@
                                 <th scope="col">status</th>
                             </tr>
                             </thead>
+                            <tbody>
+                            @foreach($notices as $notice)
+                                <tr>
+                                    <td>{{ $notice->id }}</td>
+                                    <td>{{ $notice->name }}</td>
+                                    <td>{{ $notice->email }}</td>
+                                    <td>{{ $notice->created_at->diffForHumans() }}</td>
+                                    <td>{{ $notice->updated_at->diffForHumans() }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.noticeboards.show',[$departement->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+
+                                        <a href="{{ route('admin.noticeboards.edit',[$departement->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$departement->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
 
                         </table>
 
