@@ -14,7 +14,7 @@ class ExpenseController extends Controller
     protected $redirectUrl;
     protected $userModel;
     protected $departmentModel;
-    protected $expensetModel;
+    protected $expenseModel;
     const moduleDirectory = 'admin.users.';
 
     public function __construct( Department $department, Expense $expense)
@@ -22,7 +22,7 @@ class ExpenseController extends Controller
 
         $this->redirectUrl = 'admin/users';
         $this->departmentModel = $department;
-        $this->expensetModel = $expense;
+        $this->expenseModel = $expense;
     }
     /**
      * Display a listing of the resource.
@@ -31,7 +31,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        $expenses = $this->expensetModel->orderBy('id','asc')->simplePaginate(5);
+        $expenses = $this->expenseModel->orderBy('id','asc')->simplePaginate(5);
         return view('admin.expenses.index', compact('expenses'));
 
     }
@@ -39,7 +39,7 @@ class ExpenseController extends Controller
 
     public function create()
     {
-        $expenses = $this->expensetModel->get();
+        $expenses = $this->expenseModel->get();
         return view('admin.expenses.create', compact('expenses'));
     }
 
@@ -48,11 +48,12 @@ class ExpenseController extends Controller
     {
 //        dd($request->all());
 
-        $value = $this->expensetModel->create([
+        $value = $this->expenseModel->create([
             'itemName' => $request->itemName,
             'purchaseDate' =>$request->purchaseDate,
             'purchaseFrom' => $request->purchaseFrom,
             'price' => $request->price,
+            'bill' => $request->bill,
 
         ]);
 
@@ -61,7 +62,7 @@ class ExpenseController extends Controller
             return back();
         } else {
 
-            $expenses = $this->expensetModel->orderBy('id','asc')->get();
+            $expenses = $this->expenseModel->orderBy('id','asc')->get();
             return view('admin.expenses.create', compact('expenses'));
         }
     }
@@ -69,21 +70,21 @@ class ExpenseController extends Controller
 
     public function show($id)
     {
-        $expense = $this->expensetModel->find($id);
+        $expense = $this->expenseModel->find($id);
         return view('admin.expenses.show', compact('expense'));
     }
 
 
     public function edit($id)
     {
-        $expense = $this->expensetModel->find($id);
+        $expense = $this->expenseModel->find($id);
         return view('admin.expenses.edit', compact('expense'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $expense =  $this->expensetModel->find($id);
+        $expense =  $this->expenseModel->find($id);
         $expense->itemName =  $request->itemName;
         $expense->status =  $request->status;
         $expense->update();

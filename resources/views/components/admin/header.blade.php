@@ -1,6 +1,6 @@
 <base href="">
 <meta charset="utf-8" />
-<title>{{ isset($pageTitle) ? $pageTitle.' | ' : '' }} {{ config('app.name', 'Police-Data') }}</title>
+<title>{{ isset($pageTitle) ? $pageTitle.' | ' : '' }} {{ config('app.name', 'Police-Data') }} HRM</title>
 <meta name="description" content="Updates and statistics" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <!--begin::Fonts-->

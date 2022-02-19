@@ -12,6 +12,10 @@ class Expense extends \Eloquent
 {
     use Sluggable;
 
+    protected $casts = [
+        'purchaseDate' => 'date',
+    ];
+
     // Don't forget to fill this array
     protected $fillable = ['itemName','purchaseFrom','purchaseDate','price'];
 
@@ -33,10 +37,12 @@ class Expense extends \Eloquent
         'price' => 'required'
     ];
 
-    public function setPurchaseDateAttribute($value)
-    {
-        $this->attributes['purchaseDate'] = Carbon::createFromFormat('d-m-Y', $value)->format('Y-m-d');
-    }
+//    public function setPurchaseDateAttribute($value)
+//    {
+//        dd($value);
+//        $this->attributes['purchaseDate'] = Carbon::createFromFormat('d-m-Y', $value)->format('Y-m-d');
+//
+//    }
 
 
 

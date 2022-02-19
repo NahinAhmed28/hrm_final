@@ -20,7 +20,7 @@ class CreateExpensesTable extends Migration {
             $table->date('purchaseDate');
             $table->string('purchaseFrom');
             $table->double('price');
-            $table->string('bill',100)->nullable(); //Attachement for the bill
+            $table->string('bill',100)->nullable(); //Attachment for the bill
 
             $table->timestamps();
 		});
