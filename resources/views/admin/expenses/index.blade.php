@@ -60,7 +60,7 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete"
                                                     {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
-                                                ><i class="fa fa-trash-o" aria-hidden="true"></i> Decline</button>
+                                                ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
 
 

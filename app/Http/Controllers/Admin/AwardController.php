@@ -7,17 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Award;
 use App\Models\Department;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class AwardController extends Controller
 {
     protected $awardModel;
+    protected $employeeModel;
 
-    public function __construct(Award $award)
+    public function __construct(Award $award, Employee $employee)
     {
 
-
         $this->awardModel = $award;
+        $this->employeeModel = $employee;
 
     }
     /**
@@ -35,11 +37,16 @@ class AwardController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $data = [
+            'awards' => $this->awardModel->get(),
+            '$employees' => $this->employeeModel->get(),
+        ];
+
+        return view('admin.awards.create', compact('data'));
     }
 
     /**
