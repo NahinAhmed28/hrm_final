@@ -17,7 +17,7 @@ class Expense extends \Eloquent
     ];
 
     // Don't forget to fill this array
-    protected $fillable = ['itemName','purchaseFrom','purchaseDate','price'];
+    protected $fillable = ['itemName','purchaseFrom','purchaseDate','price','bill','status'];
 
 
 

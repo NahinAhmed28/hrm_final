@@ -74,7 +74,7 @@ class DepartmentController extends Controller
 //        dd($request->all());
 
         $department =  $this->departmentModel->find($id);
-        $department->name =  $request->name;
+        $department->deptName =  $request->deptName;
         $department->status =  $request->status;
         $department->update();
         return back();

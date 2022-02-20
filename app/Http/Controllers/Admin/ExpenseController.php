@@ -54,7 +54,6 @@ class ExpenseController extends Controller
             'purchaseFrom' => $request->purchaseFrom,
             'price' => $request->price,
             'bill' => $request->bill,
-
         ]);
 
 
@@ -86,14 +85,20 @@ class ExpenseController extends Controller
     {
         $expense =  $this->expenseModel->find($id);
         $expense->itemName =  $request->itemName;
+        $expense->purchaseDate =  $request->purchaseDate;
+        $expense->purchaseFrom =  $request->purchaseFrom;
+        $expense->price =  $request->price;
+        $expense->bill =  $request->bill;
         $expense->status =  $request->status;
         $expense->update();
         return back();
     }
 
 
-    public function destroy(Expense $expense)
+    public function destroy($id)
     {
-        //
+//        dd($id);
+        $this->expenseModel->destroy($id);
+        return  back();
     }
 }

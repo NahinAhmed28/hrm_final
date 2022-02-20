@@ -19,6 +19,7 @@ class CreateAdminsTable extends Migration {
 			$table->string('email',100)->unique();
 			$table->string('password',100);
 			$table->dateTime('last_login');
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 			$table->rememberToken();
 			$table->timestamps();
 		});

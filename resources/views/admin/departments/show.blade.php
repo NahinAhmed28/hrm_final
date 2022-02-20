@@ -14,12 +14,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <h5 class="card-title">department name : {{ $department->name }}</h5>
+                    <h5 class="card-title">department name : {{ $department->deptName }}</h5>
                     <p class="card-text">ID : {{ $department->id }}</p>
                     <p class="card-text">Created At : {{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</p>
-
-
                 </div>
             </div>
         </div>

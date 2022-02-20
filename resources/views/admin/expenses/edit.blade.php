@@ -54,6 +54,19 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-sm-2 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">bill</label>
+                                            <input type="text" name="bill" class="form-control {{ $errors->has('bill') ? 'is-invalid' : '' }}" value="{{ old('bill', $expense->bill) }}" placeholder=" bill" />
+                                            @if ($errors->has('bill'))
+                                                <div class="invalid-feedback">{{ $errors->first('bill') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-sm-2 col-md-6">
                                     <div class="form-group">
                                         <label for="exampleSelect1">Status<span class="text-danger">*</span></label>

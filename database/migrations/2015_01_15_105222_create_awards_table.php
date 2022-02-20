@@ -26,7 +26,8 @@ class CreateAwardsTable extends Migration {
       		$table->string('cashPrice');
       		$table->string('forMonth',15);
       		$table->string('forYear',4);
-      			  
+
+
 			$table->timestamps();
 		});
 	}

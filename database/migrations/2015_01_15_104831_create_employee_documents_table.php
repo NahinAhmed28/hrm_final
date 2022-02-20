@@ -24,7 +24,7 @@ class CreateEmployeeDocumentsTable extends Migration {
       			  ->onDelete('cascade');
       		$table->string('type',100);
       		$table->string('fileName',100);
-
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 
 			$table->timestamps();
 		});

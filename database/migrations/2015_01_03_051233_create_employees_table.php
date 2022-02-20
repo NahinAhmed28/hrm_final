@@ -28,7 +28,7 @@ class CreateEmployeesTable extends Migration {
 			$table->string('profileImage')->default('default.jpg')->nullable();
 			$table->text('localAddress')->nullable();
 			$table->text('permanentAddress')->nullable();
-			$table->enum('status',['active','inactive']);
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 			$table->dateTime('last_login')->nullable();
 			$table->string('remember_token', 100)->nullable();
 			$table->date('exit_date')->nullable();

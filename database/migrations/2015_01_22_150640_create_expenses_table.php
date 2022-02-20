@@ -21,7 +21,7 @@ class CreateExpensesTable extends Migration {
             $table->string('purchaseFrom');
             $table->double('price');
             $table->string('bill',100)->nullable(); //Attachment for the bill
-
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
             $table->timestamps();
 		});
 	}

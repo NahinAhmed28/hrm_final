@@ -23,9 +23,9 @@
                                 <div class="col-sm-2 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <label class="form-control-label">Name<span class="text-danger">*</span></label>
-                                            <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $department->name) }}" placeholder="Your Name" />
-                                            @if ($errors->has('name'))
+                                            <label class="form-control-label">Dept Name<span class="text-danger">*</span></label>
+                                            <input type="text" name="deptName" class="form-control {{ $errors->has('deptName') ? 'is-invalid' : '' }}" value="{{ old('deptName', $department->deptName) }}" placeholder="Your Dept Name" />
+                                            @if ($errors->has('deptName'))
                                                 <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                                             @endif
                                         </div>

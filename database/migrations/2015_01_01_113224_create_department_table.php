@@ -16,6 +16,7 @@ class CreateDepartmentTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('deptName');
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 			$table->timestamps();
 		});
 	}

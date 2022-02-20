@@ -17,6 +17,7 @@ class CreateHolidaysTable extends Migration {
 			$table->increments('id');
 			$table->date('date')->unique();
 			$table->string('occassion',100);
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 			$table->timestamps();
 		});
 	}

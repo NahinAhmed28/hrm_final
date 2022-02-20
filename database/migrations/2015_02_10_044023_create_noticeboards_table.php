@@ -17,7 +17,7 @@ class CreateNoticeboardsTable extends Migration {
 			$table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->enum('status',['active','inactive']);
+            $table->unsignedBigInteger('status')->comment('1=Actve,2=Inactive')->default(1);
 			$table->timestamps();
 		});
 	}
