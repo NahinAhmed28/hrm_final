@@ -10,12 +10,12 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-header flex-wrap py-3">
                         <div class="card-title">
-                            <h3 class="card-label">Departments</h3>
+                            <h3 class="card-label">Employees</h3>
                         </div>
                         <div class="card-toolbar">
                             <!--begin::Button-->
 {{--                            @can('create', \App\Models\Admin::class)--}}
-                                <a href="{{route('admin.awards.create')}}" class="btn btn-success">
+                                <a href="{{route('admin.employees.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
 {{--                        @endcan--}}
@@ -27,10 +27,14 @@
                             <thead >
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">created at</th>
-                                <th scope="col">action</th>
-                                <th scope="col">status</th>
+                                <th scope="col">Profile Image</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Mobile Number</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Joining Date</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Permanent Address</th>
                             </tr>
                             </thead>
 

@@ -7,7 +7,7 @@ namespace App\Models;
  */
 class Employee_document extends \Eloquent
 {
-    protected $fillable = [];
+//    protected $fillable = [];
     protected $guarded = ['id'];
 
     protected $appends = ['document_url'];

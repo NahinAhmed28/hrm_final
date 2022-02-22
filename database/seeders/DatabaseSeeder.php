@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +31,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Setting table seeded!');
 
         $this->call(AdminTableSeeder::class);
-        $this->command->info('User table seeded!');
+        $this->command->info('ADMIN table seeded!');
 
         if(env('APP_ENV') == 'development' || env('APP_ENV') == 'demo'){
             $this->call(DepartmentTableSeeder::class);

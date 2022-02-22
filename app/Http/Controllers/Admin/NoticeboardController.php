@@ -57,19 +57,21 @@ class NoticeboardController extends Controller
             return back();
         } else {
 
-            $expenses = $this->noticeboardModel->orderBy('id','asc')->get();
-            return view('admin.noticeboards.create', compact('expenses'));
-        }    }
+            $notices = $this->noticeboardModel->orderBy('id','asc')->get();
+            return view('admin.noticeboards.create', compact('notices'));
+        }
+    }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Noticeboard  $noticeboard
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show(Noticeboard $noticeboard)
+    public function show($id)
     {
-        //
+        $notices = $this->noticeboardModel->find($id);
+        return view('admin.noticeboards.show', compact('notices'));
     }
 
     /**

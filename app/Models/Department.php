@@ -8,7 +8,7 @@ class Department extends \Eloquent
     protected $table = 'department';
 
     // Don't forget to fill this array
-    protected $fillable = [];
+//    protected $fillable = [];
 
     protected $guarded = ['id'];
 

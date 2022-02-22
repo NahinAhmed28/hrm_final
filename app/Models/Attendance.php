@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class Attendance extends \Eloquent
 {
     // Don't forget to fill this array
-    protected $fillable = [];
+//    protected $fillable = [];
 
     protected $table = 'attendance';
     protected $guarded = ['id'];

@@ -31,6 +31,12 @@
                     </a>
                 </li>
 
+                <li class="menu-item {{ (Request::is('admin/employees') or Request::is('admin/employees/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{route('admin.employees.index')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span style="font-size: 15px;" class="menu-text">Employees </span>
+                    </a>
+                </li>
                 <li class="menu-item {{ (Request::is('admin/expenses') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.expenses.index')}}" class="menu-link">
                         <i class="menu-icon flaticon2-sheet"></i>

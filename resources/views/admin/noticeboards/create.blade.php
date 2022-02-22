@@ -10,7 +10,7 @@
                         <h3 class="card-title">create new Notice</h3>
                         <div class="card-toolbar">
                             <div class="example-tools justify-content-center">
-                                <a href="{{route('admin.noticeboards.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>departments</a>
+                                <a href="{{route('admin.noticeboards.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Notice's</a>
                             </div>
                         </div>
                     </div>

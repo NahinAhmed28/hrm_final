@@ -7,7 +7,7 @@ namespace App\Models;
  */
 class Salary extends \Eloquent
 {
-    protected $fillable = [];
+//    protected $fillable = [];
     protected $table = 'salary';
     protected $guarded = ['id'];
 }

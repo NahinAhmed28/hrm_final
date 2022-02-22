@@ -8,7 +8,7 @@ namespace App\Models;
 class Bank_detail extends \Eloquent
 {
     protected $fillable = ['employeeID','accountName','accountNumber','bank','pan','ifsc','branch'];
-    protected $guarded = [''];
+    protected $guarded = ['id'];
 
     /**
      * @return mixed
