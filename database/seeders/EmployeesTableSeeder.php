@@ -3,7 +3,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Faker;
 class EmployeesTableSeeder extends Seeder
 {
     /**
@@ -28,7 +28,7 @@ class EmployeesTableSeeder extends Seeder
             'designation'   => rand(1, 4),
             'joiningDate'   => $faker->dateTimeBetween('-2 years')->format('Y-m-d'),
             'localAddress'  => $faker->address, 'permanentAddress' => $faker->address,
-            'status'        => 'active',
+            'status'        => '1',
             'last_login' => $faker->dateTime,
         ]);
 
@@ -45,7 +45,7 @@ class EmployeesTableSeeder extends Seeder
                 'designation'   => rand(1, 4),
                 'joiningDate'   => $faker->dateTimeBetween('-2 years')->format('Y-m-d'),
                 'localAddress'  => $faker->address, 'permanentAddress' => $faker->address,
-                'status'        => 'active',
+                'status'        => '1',
                 'last_login' => $faker->dateTime,
             ]);
         }

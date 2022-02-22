@@ -526,7 +526,7 @@
                     <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{$user->name}}</span>
                     <span class="symbol symbol-35 symbol-light-success">
 {{--											<span class="symbol-label font-size-h5 font-weight-bold">S</span>--}}
-										</span>
+{{--										</span>--}}
                 </div>
             </div>
             <!--end::User-->

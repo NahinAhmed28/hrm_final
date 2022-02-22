@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminTableSeeder::class);
         $this->command->info('ADMIN table seeded!');
 
-        if(env('APP_ENV') == 'development' || env('APP_ENV') == 'demo'){
+//        if(env('APP_ENV') == 'development' || env('APP_ENV') == 'demo'){
             $this->call(DepartmentTableSeeder::class);
             $this->command->info('Department table seeded!');
             $this->command->info('Designation also table seeded!');
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
 
             $this->call(NoticeBoardSeeder::class);
             $this->command->info('Notice Board seeded');
-        }
+//        }
 
         $this->call(LeaveTypeSeeder::class);
         $this->command->info('LeaveType table seeded!');

@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-
+use Faker;
 class NoticeBoardSeeder extends Seeder
 {
     /**
@@ -18,7 +18,7 @@ class NoticeBoardSeeder extends Seeder
             \App\Models\Noticeboard::create([
                 'title' => $faker->realText(30),
                 'description' => $faker->realText(200),
-                'status' => 'active'
+                'status' => '1'
 
             ]);
         }
