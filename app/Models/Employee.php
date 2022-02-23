@@ -28,6 +28,7 @@ class Employee extends \Eloquent implements Authenticatable
      * @return mixed
      */
     public function getDocuments()
+
     {
         return $this->hasMany(Employee_document::class, 'employeeID', 'employeeID');
     }

@@ -41,7 +41,7 @@ class EmployeesTableSeeder extends Seeder
                 'password'      => '123456',
                 'gender'        => $faker->randomElement(['male','female']),
                 'fatherName'    => $faker->name,
-                'mobileNumber'  => rand(1, 9),
+                'mobileNumber'  => rand(111111111, 9999999999),
                 'designation'   => rand(1, 4),
                 'joiningDate'   => $faker->dateTimeBetween('-2 years')->format('Y-m-d'),
                 'localAddress'  => $faker->address, 'permanentAddress' => $faker->address,

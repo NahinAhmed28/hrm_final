@@ -34,6 +34,7 @@
                                 <th scope="col">for Month</th>
                                 <th scope="col">for Year</th>
                                 <th scope="col">Created</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
 
@@ -46,7 +47,6 @@
                                     <td> {{$award->gift }} </td>
                                     <td> {{$award->cashPrice }} </td>
                                     <td> {{$award->forMonth }} </td>
-                                    <td> {{$award->forYear }} </td>
                                     <td> {{$award->forYear }} </td>
                                     <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
                                     <td>
@@ -62,7 +62,11 @@
                             @endforeach
                             </tbody>
                         </table>
-
+                        {{--pagination--}}
+                        <div class="d-flex justify-content-center">
+                            {!! $awards->links() !!}
+                        </div>
+                        {{--end pagination--}}
 
                     </div>
                 </div>

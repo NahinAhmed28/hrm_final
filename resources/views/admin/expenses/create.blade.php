@@ -10,7 +10,8 @@
                         <h3 class="card-title">create new expense</h3>
                         <div class="card-toolbar">
                             <div class="example-tools justify-content-center">
-                                <a href="{{route('admin.expenses.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Expenses</a>
+                                <a href="{{route('admin.employees.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Expenses
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -85,9 +86,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success mr-3"> <i class="flaticon2-paperplane"></i>Save</button>

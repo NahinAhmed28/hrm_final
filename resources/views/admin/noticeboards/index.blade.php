@@ -30,6 +30,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">created at</th>
+                                <th scope="col">updated at</th>
                                 <th scope="col">action</th>
                             </tr>
                             </thead>
@@ -37,8 +38,8 @@
                             @foreach($notices as $notice)
                                 <tr>
                                     <td>{{ $notice->id }}</td>
-                                    <td>{{ $notice->title }}</td>
-                                    <td>{{ $notice->description }}</td>
+                                    <td class="col-sm-2">{{ $notice->title }}</td>
+                                    <td class="col-md-4">{{ $notice->description }}</td>
                                     <td>{{ $notice->created_at->diffForHumans() }}</td>
                                     <td>{{ $notice->updated_at->diffForHumans() }}</td>
                                     <td>

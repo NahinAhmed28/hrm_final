@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('admins')->truncate(); // deleting old records.
+//        \Illuminate\Support\Facades\DB::table('admins')->truncate(); // deleting old records.
 
         \App\Models\Admin::create(
             [

@@ -33,7 +33,43 @@
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <label class="form-control-label">Email<span class="text-danger">*</span></label>
+                                            <label class="form-control-label">employeeID<span class="text-danger">*</span></label>
+                                            <input type="text" name="employeeID" class="form-control {{ $errors->has('employeeID') ? 'is-invalid' : '' }}" value="{{ old('employeeID') }}" placeholder="Enter Name" />
+                                            @if ($errors->has('employeeID'))
+                                                <div class="invalid-feedback">{{ $errors->first('employeeID') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="discipline">Select Discipline</label>
+                                            <select class="form-control js-example-basic-multiple"  id="discipline" name="disciplines[]" multiple="multiple">
+                                                @foreach($designations as $designation)
+                                                    <option value="{{$designation->id}}">{{$designation->designation}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="discipline">Select Discipline</label>
+                                        <select class="form-control js-example-basic-multiple"  id="discipline" name="disciplines[]" multiple="multiple">
+
+                                            @foreach($designations as $designation)
+                                                <option value="{{$designation->id}}">{{$designation->$designation}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Email</label>
                                             <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"  placeholder="Your Email" />
                                             @if ($errors->has('email'))
                                                 <div class="invalid-feedback">{{ $errors->first('email') }}</div>
@@ -163,3 +199,11 @@
     </div>
 @endsection
 
+@push('scripts')
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+@endpush
