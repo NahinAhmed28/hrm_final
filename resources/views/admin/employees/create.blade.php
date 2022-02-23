@@ -41,28 +41,26 @@
                                         </div>
                                     </div>
                                 </div>
+{{--                                <div class="col-sm-12 col-md-6">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for="discipline">Select Discipline</label>--}}
+{{--                                            <select class="form-control js-example-basic-multiple"  id="discipline" name="disciplines[]" multiple="multiple">--}}
+{{--                                                @foreach($designations as $designation)--}}
+{{--                                                    <option value="{{$designation->id}}">{{$designation->designation}}</option>--}}
+{{--                                                @endforeach--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
-                                        <div class="form-group">
-                                            <label for="discipline">Select Discipline</label>
-                                            <select class="form-control js-example-basic-multiple"  id="discipline" name="disciplines[]" multiple="multiple">
+                                            <label for="discipline">Select Designation</label>
+                                            <select class="form-control js-example-basic-multiple"  id="discipline" name="designation" multiple="multiple">
                                                 @foreach($designations as $designation)
                                                     <option value="{{$designation->id}}">{{$designation->designation}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="discipline">Select Discipline</label>
-                                        <select class="form-control js-example-basic-multiple"  id="discipline" name="disciplines[]" multiple="multiple">
-
-                                            @foreach($designations as $designation)
-                                                <option value="{{$designation->id}}">{{$designation->$designation}}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
                                 </div>
 
@@ -138,17 +136,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Designation</label>
-                                            <input type="text" name="designation" class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}" value="{{ old('designation') }}" placeholder="Your designation" />
-                                            @if ($errors->has('designation'))
-                                                <div class="invalid-feedback">{{ $errors->first('designation') }}</div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">

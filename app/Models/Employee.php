@@ -19,7 +19,7 @@ class Employee extends \Eloquent implements Authenticatable
     /**
      * @return mixed
      */
-    public function getDesignation()
+    public function getDesignation(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Designation::class, 'designation', 'id');
     }

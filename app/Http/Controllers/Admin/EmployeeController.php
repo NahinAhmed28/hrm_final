@@ -8,6 +8,7 @@ use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
@@ -25,7 +26,8 @@ class EmployeeController extends Controller
 
     public function index()
     {
-        $employees = $this->employeeModel->orderBy('id','desc')->simplePaginate(5);
+//        $employees = $this->employeeModel->orderBy('id','desc')->simplePaginate(5);
+        $employees = $this->employeeModel->orderBy('id','desc')->get();
         return view('admin.employees.index', compact('employees'));
     }
 
@@ -56,11 +58,14 @@ class EmployeeController extends Controller
             'joiningDate'=>$request->joiningDate,
             'localAddress'=>$request->localAddress,
             'permanentAddress'=>$request->permanentAddress,
-            'designation'=>'1',
+            'designation'=>$request->designation,
+            'profileImage'=>'default.jpg',
 
         ]);
+
+
         if ($value) {
-            return view('admin.employees.index');
+            return back();
         } else {
             return back();
         }
