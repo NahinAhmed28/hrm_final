@@ -50,7 +50,7 @@
                                     <td> {{$employee->fullName }} </td>
                                     <td> {{$employee->gender }} </td>
                                     <td> {{$employee->mobileNumber }} </td>
-                                    <td> {{$employee->date_of_birth }} </td>
+                                    <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>
                                     <td> {{$employee->designation }} </td>
                                     <td> {{$employee->joiningDate }} </td>
                                     <td> {{$employee->localAddress }} </td>

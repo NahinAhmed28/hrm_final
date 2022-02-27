@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
+use App\Models\Expense;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -47,6 +48,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(LeaveTypeSeeder::class);
         $this->command->info('LeaveType table seeded!');
+
+
+        $this->call(ExpenseTableSeeder::class);
+        $this->command->info('ExpenseTableSeeder table seeded!');
+
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

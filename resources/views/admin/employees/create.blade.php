@@ -56,14 +56,24 @@
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                             <label for="discipline">Select Designation</label>
-                                            <select class="form-control js-example-basic-multiple"  id="discipline" name="designation" multiple="multiple">
+                                            <select class="form-control js-example-basic-single"  id="discipline" name="designation" >
                                                 @foreach($designations as $designation)
                                                     <option value="{{$designation->id}}">{{$designation->designation}}</option>
                                                 @endforeach
                                             </select>
                                     </div>
                                 </div>
-
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label"> Date of Birth<span class="text-danger">*</span></label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" name="date_of_birth" value="{{ old('date_of_birth') }}" placeholder="Date of Birth"/>
+                                            <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
@@ -75,19 +85,7 @@
                                         </div>
                                     </div>
                                 </div>
-{{--                                <div class="col-sm-12 col-md-6">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label>Image Browser</label>--}}
-{{--                                        <div></div>--}}
-{{--                                        <div class="custom-file">--}}
-{{--                                            <input type="file" name="profileImage" class="custom-file-input form-control {{ $errors->has('profileImage') ? 'is-invalid' : '' }}" id="UserImageFile" />--}}
-{{--                                            <label class="custom-file-label" for="UserImageFile">Choose file</label>--}}
-{{--                                            @if ($errors->has('profileImage'))--}}
-{{--                                                <div class="invalid-feedback">{{ $errors->first('profileImage') }}</div>--}}
-{{--                                            @endif--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">

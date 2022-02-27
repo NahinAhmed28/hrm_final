@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+    protected $employeeModel;
     /**
      * Display a listing of the resource.
      *

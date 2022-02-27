@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Employee;
+use App\Models\Setting;
 
 class SettingTableSeeder extends Seeder
 {
@@ -30,8 +32,6 @@ class SettingTableSeeder extends Seeder
             'notice_notification'    => 1,
             'attendance_notification'    => 1,
             'employee_add'    => 1,
-
-
         ]);
     }
 }

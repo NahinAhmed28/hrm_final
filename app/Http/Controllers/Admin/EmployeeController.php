@@ -18,7 +18,6 @@ class EmployeeController extends Controller
 
     public function __construct(Employee $employee, Designation $designation)
     {
-
         $this->employeeModel = $employee;
         $this->designationModel = $designation;
     }
@@ -46,7 +45,6 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
-
         $value = $this->employeeModel->create([
             'fullName' => $request->fullName,
             'employeeID' => $request->employeeID,
@@ -59,17 +57,15 @@ class EmployeeController extends Controller
             'localAddress'=>$request->localAddress,
             'permanentAddress'=>$request->permanentAddress,
             'designation'=>$request->designation,
+            'date_of_birth'=>$request->date_of_birth,
             'profileImage'=>'default.jpg',
 
         ]);
-
-
         if ($value) {
             return back();
         } else {
             return back();
         }
-
     }
 
 
@@ -82,7 +78,6 @@ class EmployeeController extends Controller
 
     public function edit($id)
     {
-
         $department = $this->employeeModel->find($id);
         return view('admin.departments.edit', compact('department'));
     }

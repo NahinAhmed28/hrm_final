@@ -35,6 +35,11 @@
                             </tr>
                             </thead>
 
+                            <tbody>
+                            @foreach()
+                            <td></td>
+                            @endforeach
+                            </tbody>
                         </table>
 
 

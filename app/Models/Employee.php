@@ -15,6 +15,8 @@ class Employee extends \Eloquent implements Authenticatable
 
     protected $hidden = ['password'];
     protected $appends = ['profile_image_url'];
+    protected $casts = ['date_of_birth' => 'date'];
+
 
     /**
      * @return mixed
