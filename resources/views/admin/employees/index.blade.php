@@ -32,7 +32,7 @@
                                 <th scope="col">Full Name</th>
                                 <th scope="col">Gender</th>
                                 <th scope="col">Mobile Number</th>
-                                <th scope="col">Date of birth</th>
+                                <th scope="col" style="width: 10%">Date of birth</th>
                                 <th scope="col">Designation</th>
                                 <th scope="col">Joining Date</th>
                                 <th scope="col">Local Address</th>
@@ -50,7 +50,7 @@
                                     <td> {{$employee->fullName }} </td>
                                     <td> {{$employee->gender }} </td>
                                     <td> {{$employee->mobileNumber }} </td>
-                                    <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>
+                                    <td > {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>
                                     <td> {{$employee->designation }} </td>
                                     <td> {{$employee->joiningDate }} </td>
                                     <td> {{$employee->localAddress }} </td>

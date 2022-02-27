@@ -42,7 +42,7 @@
                                         <td> {{$expense->id }} </td>
                                         <td> {{$expense->itemName }} </td>
 {{--                                        <td> {{$expense->purchaseDate }} </td>--}}
-                                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $expense->purchaseDate)->format('d-m-Y') }}  </td>
+                                        <td >{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $expense->purchaseDate)->format('d-m-Y') }}  </td>
                                         <td> {{$expense->purchaseFrom }} </td>
                                         <td> {{$expense->price }} </td>
                                         <td> {{$expense->bill }} </td>
