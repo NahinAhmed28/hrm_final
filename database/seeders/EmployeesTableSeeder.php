@@ -47,7 +47,7 @@ class EmployeesTableSeeder extends Seeder
                 'joiningDate'   => $faker->dateTimeBetween('-2 years')->format('Y-m-d'),
                 'localAddress'  => $faker->address, 'permanentAddress' => $faker->address,
                 'status'        => '1',
-                'date_of_birth'        => '27-Dec-2017',
+                'date_of_birth' => '27-Dec-2017',
                 'last_login' => $faker->dateTime,
             ]);
         }

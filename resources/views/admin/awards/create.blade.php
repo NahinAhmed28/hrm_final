@@ -31,24 +31,20 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Select Employee<span class="text-danger">*</span></label>
-                                            <select class="form-control custom-select" id="inputGroupSelect03" name="course_id">
-                                                <option selected>select...</option>
+                                            <select class="form-control js-example-basic-single" id="inputGroupSelect03" name="employeeID" >
                                                 @foreach($employees as $employee)
-                                                    <option value="{{$employee->id}}">{{$employee->name}}</option>
+                                                    <option value="{{$employee->employeeID}}">{{$employee->fullName}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
@@ -103,9 +99,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success mr-3"> <i class="flaticon2-paperplane"></i>Save</button>
@@ -118,3 +111,16 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2(
+                {
+                    placeholder: "Select....",
+                    allowClear: true
+                }
+            );
+        });
+    </script>
+@endpush

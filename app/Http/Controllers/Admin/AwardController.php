@@ -9,6 +9,8 @@ use App\Models\Award;
 use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AwardController extends Controller
 {
@@ -43,10 +45,11 @@ class AwardController extends Controller
     {
         $data = [
             'awards' => $this->awardModel->get(),
-            '$employees' => $this->employeeModel->get(),
+            'employees' => $this->employeeModel->get(),
         ];
 
-        return view('admin.awards.create', compact('data'));
+
+        return view('admin.awards.create', $data);
     }
 
     /**
@@ -57,7 +60,28 @@ class AwardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+//        DB::beginTransaction();
+
+
+   $value = $this->awardModel->create([
+            'awardName' => $request->awardName,
+            'gift' => $request->gift,
+            'password'=>Hash::make($request->password),
+            'cashPrice'=>$request->cashPrice,
+            'forMonth'=>$request->forMonth,
+            'forYear'=>$request->forYear,
+            'employeeID'=>$request->employeeID,
+//            'employeeID'=>implode("",$request->input('employeeID',[]))
+        ]);
+
+
+
+//        $value->attach(implode($request->input('employeeID',[]),","));
+//        DB::commit();
+
+
+   dd($value);
     }
 
     /**
