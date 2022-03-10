@@ -15,7 +15,7 @@
                         <div class="card-toolbar">
                             <!--begin::Button-->
 {{--                            @can('create', \App\Models\Admin::class)--}}
-                                <a href="{{route('admin.awards.create')}}" class="btn btn-success">
+                                <a href="{{route('admin.settings.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
 {{--                            @endcan--}}
@@ -29,6 +29,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Website</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Logo</th>
                                 <th scope="col">Currency</th>
                                 <th scope="col">Currency icon</th>
@@ -36,8 +37,14 @@
                             </thead>
 
                             <tbody>
-                            @foreach()
-                            <td></td>
+                            @foreach($settings as $setting)
+                                <td>{{ $setting->id }}</td>
+                                <td>{{ $setting->website }}</td>
+                            <td>{{ $setting->email }}</td>
+                            <td>{{ $setting->name }}</td>
+                            <td>{{ $setting->logo }}</td>
+                            <td>{{ $setting->currency }}</td>
+                            <td>{{ $setting->currency_icon }}</td>
                             @endforeach
                             </tbody>
                         </table>

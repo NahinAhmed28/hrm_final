@@ -61,7 +61,8 @@ class AwardController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
-//        DB::beginTransaction();
+
+        DB::beginTransaction();
 
 
    $value = $this->awardModel->create([
@@ -71,17 +72,24 @@ class AwardController extends Controller
             'cashPrice'=>$request->cashPrice,
             'forMonth'=>$request->forMonth,
             'forYear'=>$request->forYear,
-            'employeeID'=>$request->employeeID,
-//            'employeeID'=>implode("",$request->input('employeeID',[]))
+           'employeeID'=>$request->employeeID,
+//            'employeeID'=>implode(",",$request->input('employeeID',[]))
         ]);
 
 
 
-//        $value->attach(implode($request->input('employeeID',[]),","));
-//        DB::commit();
+        $value->employeeDetails()->attach(implode($request->input('employeeID',[]),","));
+        DB::commit();
 
 
-   dd($value);
+//   dd($value);
+
+
+        if ($value) {
+            return back();
+        } else {
+            return back();
+        }
     }
 
     /**

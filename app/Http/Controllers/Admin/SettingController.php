@@ -9,15 +9,20 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    protected $employeeModel;
+    protected $settingModel;
+    public function __construct(Setting $setting)
+    {
+        $this->settingModel = $setting;
+    }
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.settings.index');
+        $settings = $this->settingModel->orderBy('id','asc')->get();
+        return view('admin.settings.index',compact('settings'));
     }
 
     /**
@@ -27,7 +32,7 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.settings.create');
     }
 
     /**

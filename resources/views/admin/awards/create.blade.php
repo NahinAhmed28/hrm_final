@@ -36,6 +36,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Select Employee<span class="text-danger">*</span></label>
+{{--                                            <select class="form-control js-example-basic-multiple" id="inputGroupSelect03" name="employeeID[]"  multiple="multiple">--}}
                                             <select class="form-control js-example-basic-single" id="inputGroupSelect03" name="employeeID" >
                                                 @foreach($employees as $employee)
                                                     <option value="{{$employee->employeeID}}">{{$employee->fullName}}</option>
