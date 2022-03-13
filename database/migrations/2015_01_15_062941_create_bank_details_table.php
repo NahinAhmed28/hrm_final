@@ -28,9 +28,8 @@ class CreateBankDetailsTable extends Migration {
 			$table->string('bank',100);
 			$table->string('pan',10);
 			$table->string('branch',100);
-			$table->string('ifsc',20);
 
-      			 
+
 			$table->timestamps();
 		});
 	}

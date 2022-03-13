@@ -63,9 +63,9 @@
                             </tbody>
                         </table>
 
-{{--                        <div class="d-flex justify-content-center">--}}
-{{--                            {!! $employees->links() !!}--}}
-{{--                        </div>--}}
+                        <div class="d-flex justify-content-center">
+                            {!! $employees->links() !!}
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

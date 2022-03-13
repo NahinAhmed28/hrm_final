@@ -41,20 +41,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleSelect1">Role<span class="text-danger">*</span></label>
-                                        <select class="form-control {{ $errors->has('role_id') ? 'is-invalid' : '' }}" name="role_id">
-                                            <option value="" disabled>--Select--</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{$role->id}}" {{$role->id == old('role_id') ? 'selected' : ''}}>{{$role->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('role_id'))
-                                            <div class="invalid-feedback">{{ $errors->first('role_id') }}</div>
-                                        @endif
-                                    </div>
-                                </div>
+{{--                                <div class="col-sm-12 col-md-6">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label for="exampleSelect1">Role<span class="text-danger">*</span></label>--}}
+{{--                                        <select class="form-control {{ $errors->has('role_id') ? 'is-invalid' : '' }}" name="role_id">--}}
+{{--                                            <option value="" disabled>--Select--</option>--}}
+{{--                                            @foreach($roles as $role)--}}
+{{--                                                <option value="{{$role->id}}" {{$role->id == old('role_id') ? 'selected' : ''}}>{{$role->name}}</option>--}}
+{{--                                            @endforeach--}}
+{{--                                        </select>--}}
+{{--                                        @if ($errors->has('role_id'))--}}
+{{--                                            <div class="invalid-feedback">{{ $errors->first('role_id') }}</div>--}}
+{{--                                        @endif--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">

@@ -16,7 +16,7 @@
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1"
              data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
-            <ul class="menu-nav">
+            <div class="menu-nav">
                 <li class="menu-item {{ Request::is('admin/dashboard') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.dashboard')}}" class="menu-link">
                         <i class="menu-icon flaticon2-architecture-and-city"></i>
@@ -31,12 +31,38 @@
                     </a>
                 </li>
 
-                <li class="menu-item {{ (Request::is('admin/employees') or Request::is('admin/employees/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.employees.index')}}" class="menu-link">
+                <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*') or Request::is('admin/awards')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">
+{{--                    <a href="{{route('admin.employees.index')}}" class="menu-link menu-toggle">--}}
+                    <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-user"></i>
                         <span style="font-size: 15px;" class="menu-text">Employees </span>
+                        <i class="menu-arrow"></i>
                     </a>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                            <ul class="menu-subnav">
+                                <li class="menu-item menu-item-parent" aria-haspopup="true">Z
+                                    <span class="menu-link">
+                                    <span class="menu-text">Actions</span>
+                                </span>
+                                </li>
+                                <li class="menu-item {{ (Request::is('admin/employees') or Request::is('admin/employees/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                    <a href="{{route('admin.employees.index')}}" class="menu-link">
+                                        <i class="menu-icon flaticon2-list"></i>
+                                        <span style="font-size: 15px;" class="menu-text">Employee list</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/awards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                    <a href="{{route('admin.awards.index')}}" class="menu-link">
+                                        <i class="menu-icon flaticon2-cup"></i>
+                                        <span style="font-size: 15px;" class="menu-text">Award</span>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
                 </li>
+
+
                 <li class="menu-item {{ (Request::is('admin/expenses') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.expenses.index')}}" class="menu-link">
                         <i class="menu-icon flaticon2-sheet"></i>
@@ -44,12 +70,6 @@
                     </a>
                 </li>
 
-                <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/awards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.awards.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-cup"></i>
-                        <span style="font-size: 15px;" class="menu-text">Award</span>
-                    </a>
-                </li>
 
                 <li class="menu-item {{ (Request::is('admin/noticeboards') or Request::is('admin/noticeboards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.noticeboards.index')}}" class="menu-link">
@@ -74,6 +94,7 @@
 
 
             </ul>
+            </div>
             <!--end::Menu Nav-->
         </div>
         <!--end::Menu Container-->

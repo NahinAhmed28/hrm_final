@@ -26,7 +26,7 @@ class EmployeeController extends Controller
     public function index()
     {
 //        $employees = $this->employeeModel->orderBy('id','desc')->simplePaginate(5);
-        $employees = $this->employeeModel->orderBy('id','desc')->get();
+        $employees = $this->employeeModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5);;
         return view('admin.employees.index', compact('employees'));
     }
 
