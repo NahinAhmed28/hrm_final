@@ -21,6 +21,8 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::get('users/get-data', [UserController::class, 'getData']);
     Route::resource('/users', UserController::class);
     Route::resource('/employees', EmployeeController::class);
+    Route::get('/admin/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.bankDetail');
+
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/expenses', ExpenseController::class);
     Route::resource('/awards', AwardController::class);

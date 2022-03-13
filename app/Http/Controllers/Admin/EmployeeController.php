@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Bank_detail;
 use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
@@ -94,6 +95,13 @@ class EmployeeController extends Controller
         return back();
     }
 
+    public function bankdetail($id)
+    {
+//        $details =$this->employeeModel::find($id);
+        return view('admin.employees.bankdetails'
+//            , compact('details')
+        );
+    }
 
     public function destroy(Department $department)
     {
