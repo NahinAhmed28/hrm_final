@@ -51,7 +51,7 @@
                                     <td> {{$employee->fullName }} </td>
                                     <td> {{$employee->gender }} </td>
                                     <td> {{$employee->mobileNumber }} </td>
-                                    <td><a href="{{route('employee.bankDetail',[$employee->id])}}" >Click Here</a></td>
+                                    <td><a href="{{route('admin.employee.detail',$employee->employeeID)}}" >Click Here</a></td>
                                     <td > {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>
                                     <td> {{$employee->designation }} </td>
                                     <td> {{$employee->joiningDate }} </td>

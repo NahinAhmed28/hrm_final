@@ -95,12 +95,11 @@ class EmployeeController extends Controller
         return back();
     }
 
-    public function bankdetail($id)
+    public function bankdetail($employeeID)
     {
-//        $details =$this->employeeModel::find($id);
-        return view('admin.employees.bankdetails'
-//            , compact('details')
-        );
+        $details =Bank_detail::find($employeeID);
+        return view('admin.employees.bankdetails', compact('details'));
+
     }
 
     public function destroy(Department $department)
