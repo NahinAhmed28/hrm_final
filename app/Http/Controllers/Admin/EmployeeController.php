@@ -97,8 +97,13 @@ class EmployeeController extends Controller
 
     public function bankdetail($employeeID)
     {
-        $details =Bank_detail::find($employeeID);
-        return view('admin.employees.bankdetails', compact('details'));
+        $data = [
+            'details' => Bank_detail::find($employeeID),
+            'employees' => $this->employeeModel->get()
+        ];
+
+
+        return view('admin.employees.bankdetails',$data);
 
     }
 

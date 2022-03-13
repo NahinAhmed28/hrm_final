@@ -16,8 +16,15 @@
                     </div>
                     <div class="card-body">
 
-//details of bank
-
+{{--employee details of bank--}}
+                        <h5 class="card-title">Employee Name : {{$details->employees->fullName}}</h5>
+                        <p class="card-text">Account Name : {{$details->accountName}}</p>
+{{--                        <img src="{{asset('uploads/postFiles/'.$posts->file_path)}}" width="150">--}}
+                        <p class="card-text">Account Number :{{$details->accountNumber}}</p>
+                        <p class="card-text">Bank : {{$details->bank}}</p>
+                        <p class="card-text">Pan : {{$details->bank}}</p>
+                        <p class="card-text">Branch : {{$details->branch}}</p>
+                        <p class="card-text">Created At : {{ \Carbon\Carbon::parse($details->created_at)->diffForHumans() }}</p>
                     </div>
                 </div>
                 <!--end::Card-->
