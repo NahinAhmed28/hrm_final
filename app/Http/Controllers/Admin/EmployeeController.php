@@ -103,6 +103,9 @@ class EmployeeController extends Controller
         ];
 
 
+        dd($data);
+
+
         return view('admin.employees.bankdetails',$data);
 
     }

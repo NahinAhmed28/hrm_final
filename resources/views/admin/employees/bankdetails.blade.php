@@ -17,7 +17,7 @@
                     <div class="card-body">
 
 {{--employee details of bank--}}
-                        <h5 class="card-title">Employee Name : {{$details->employees->fullName}}</h5>
+                        <h5 class="card-title">Employee Name : {{$details->employeeDetails->fullName}}</h5>
                         <p class="card-text">Account Name : {{$details->accountName}}</p>
 {{--                        <img src="{{asset('uploads/postFiles/'.$posts->file_path)}}" width="150">--}}
                         <p class="card-text">Account Number :{{$details->accountNumber}}</p>
