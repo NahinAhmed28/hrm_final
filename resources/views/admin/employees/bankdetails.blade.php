@@ -12,7 +12,6 @@
                         <div class="card-title">
                             <h3 class="card-label">Bank Details</h3>
                         </div>
-
                     </div>
                     <div class="card-body">
 

@@ -50,11 +50,8 @@
                                     <td> {{$award->forYear }} </td>
                                     <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('admin.awards.edit',[$award->id]) }}" title="View Student">
-                                            <button class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
-                                            </button></a>
-                                        <a href="{{ route('admin.awards.show',[$award->id]) }}" title="View Student">
-                                            <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
+                                        <a href="{{ route('admin.awards.destroy',[$award->id]) }}" title="View Student">
+                                            <button class="btn btn-danger btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
                                             </button></a>
                                     </td>
 

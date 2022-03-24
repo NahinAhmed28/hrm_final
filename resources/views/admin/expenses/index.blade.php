@@ -50,17 +50,17 @@
                                         <td>{{ \Carbon\Carbon::parse($expense->created_at)->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('admin.expenses.edit',[$expense->id]) }}" title="View Student">
-                                                <button class="btn btn-outline-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
+                                                <button class="btn btn-outline-warning btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                                 </button></a>
                                             <a href="{{ route('admin.expenses.show',[$expense->id]) }}" title="View Student">
-                                                <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
+                                                <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button></a>
                                             <form method="POST" action="{{ route('admin.expenses.destroy' ,  [$expense->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete"
                                                     {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
-                                                ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                ><i class="fa fa-trash" aria-hidden="true"></i> </button>
                                             </form>
 
 

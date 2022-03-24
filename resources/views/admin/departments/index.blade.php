@@ -1,8 +1,6 @@
 @extends('admin.layouts.app')
 @section('pageTitle')
-
 @section('content')
-
     <div class="container p-0">
         <div class="row">
             <div class="col-md-12">
@@ -40,25 +38,22 @@
                                         <td>{{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="View Student">
-                                                <button class="btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Edit
+                                                <button class="btn btn-warning btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                                 </button></a>
                                             <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View Student">
-                                                <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
+                                                <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button></a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
                 <!--end::Card-->
             </div>
         </div>
     </div>
-
 @endsection
 
 @once
