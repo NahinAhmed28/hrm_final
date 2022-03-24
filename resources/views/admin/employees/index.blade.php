@@ -26,7 +26,7 @@
                         <table class="table table-bordered">
                             <thead >
                             <tr>
-                                <th scope="col">ID</th>
+
                                 <th scope="col">Employee ID</th>
                                 <th scope="col">Profile Image</th>
                                 <th scope="col">Full Name</th>
@@ -45,7 +45,7 @@
                             <tbody>
                             @foreach($employees as $employee)
                                 <tr>
-                                    <td> {{$employee->id }} </td>
+
                                     <td> {{$employee->employeeID }} </td>
                                     <td> {{$employee->profileImage }} </td>
                                     <td> {{$employee->fullName }} </td>
