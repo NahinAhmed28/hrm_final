@@ -97,13 +97,18 @@ class EmployeeController extends Controller
 
     public function bankdetail($employeeID)
     {
+//        dd($employeeID);
+
+
+
         $data = [
-            'details' => Bank_detail::find($employeeID),
-            'employees' => $this->employeeModel->get()
+//            'details' => Bank_detail::find($employeeID),
+            'details' => Bank_detail::where('employeeID', $employeeID)->first(),
+            'employees' => $this->employeeModel->where('employeeID', $employeeID)->first()
         ];
 
 
-        dd($data);
+//        dd($data);
 
 
         return view('admin.employees.bankdetails',$data);
