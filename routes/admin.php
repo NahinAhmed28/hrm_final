@@ -22,7 +22,8 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::resource('/users', UserController::class);
     Route::resource('/employees', EmployeeController::class);
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
-    Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.detail.edit');
+    Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');
+    Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailUpdate'])->name('employee.bankDetail.update');
 
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/expenses', ExpenseController::class);

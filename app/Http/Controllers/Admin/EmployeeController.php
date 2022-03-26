@@ -97,9 +97,21 @@ class EmployeeController extends Controller
 
     public function bankdetail($employeeID)
     {
+
+        $data = [
+//            'details' => Bank_detail::find($employeeID),
+            'details' => Bank_detail::where('employeeID', $employeeID)->first(),
+            'employees' => $this->employeeModel->where('employeeID', $employeeID)->first()
+        ];
+
+
+        return view('admin.employees.bankdetails',$data);
+
+    }
+
+    public function bankDetailEdit($employeeID)
+    {
 //        dd($employeeID);
-
-
 
         $data = [
 //            'details' => Bank_detail::find($employeeID),
@@ -111,9 +123,28 @@ class EmployeeController extends Controller
 //        dd($data);
 
 
-        return view('admin.employees.bankdetails',$data);
+        return view('admin.employees.bankDetailsEdit',$data);
 
     }
+
+
+    public function bankDetailUpdate(Request $request, $employeeID)
+    {
+//        dd($employeeID);
+
+        $details = Bank_detail::where('employeeID', $employeeID)->first();
+        $details->accountName =  $request->accountName;
+        $details->accountNumber =  $request->accountNumber;
+        $details->bank =  $request->bank;
+        $details->pan =  $request->pan;
+        $details->branch =  $request->branch;
+        $details->ifsc =  $request->ifsc;
+        $details->update();
+        return back();
+
+
+    }
+
 
     public function destroy(Department $department)
     {

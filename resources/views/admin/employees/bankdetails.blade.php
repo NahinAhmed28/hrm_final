@@ -16,16 +16,19 @@
                     <div class="card-body">
 
 {{--employee details of bank--}}
-                        <h5 class="card-title">Employee Name : {{$details->employeeDetails->fullName}}</h5>
-                        <p class="card-text">Account Name : {{$details->accountName}}</p>
+
+                        <h5 class="card-title">Employee Name :  @isset($details) {{$details->employeeDetails->fullName}}  @endisset</h5>
+                        <p class="card-text">Account Name :  @isset($details){{$details->accountName}}  @endisset</p>
 {{--                        <img src="{{asset('uploads/postFiles/'.$posts->file_path)}}" width="150">--}}
-                        <p class="card-text">Account Number :{{$details->accountNumber}}</p>
-                        <p class="card-text">Bank : {{$details->bank}}</p>
-                        <p class="card-text">Pan : {{$details->bank}}</p>
-                        <p class="card-text">Branch : {{$details->branch}}</p>
-                        <p class="card-text">Created At : {{ \Carbon\Carbon::parse($details->created_at)->diffForHumans() }}</p>
+                        <p class="card-text">Account Number : @isset($details){{$details->accountNumber}}  @endisset</p>
+                        <p class="card-text">Bank :  @isset($details){{$details->bank}}  @endisset</p>
+                        <p class="card-text">Pan :  @isset($details){{$details->bank}}  @endisset</p>
+                        <p class="card-text">Branch : @isset($details) {{$details->branch}}  @endisset</p>
+                        <p class="card-text">Created At : @isset($details) {{ \Carbon\Carbon::parse($details->created_at)->diffForHumans() }}  @endisset</p>
+
                     </div>
                 </div>
+                <a href="{{route('admin.employee.bankDetail.edit',$employees->employeeID)}}" >Edit Info</a>
                 <!--end::Card-->
             </div>
         </div>
