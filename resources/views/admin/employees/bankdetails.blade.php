@@ -25,10 +25,10 @@
                         <p class="card-text">Pan :  @isset($details){{$details->bank}}  @endisset</p>
                         <p class="card-text">Branch : @isset($details) {{$details->branch}}  @endisset</p>
                         <p class="card-text">Created At : @isset($details) {{ \Carbon\Carbon::parse($details->created_at)->diffForHumans() }}  @endisset</p>
-
+                        <a class="btn btn-primary stretched-link" href="{{route('admin.employee.bankDetail.edit',$employees->employeeID)}}" > Edit Info </a>
                     </div>
                 </div>
-                <a href="{{route('admin.employee.bankDetail.edit',$employees->employeeID)}}" >Edit Info</a>
+
                 <!--end::Card-->
             </div>
         </div>
