@@ -31,7 +31,7 @@
                                 <th scope="col">Description</th>
                                 <th scope="col">created at</th>
                                 <th scope="col">updated at</th>
-                                <th scope="col">action</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -42,14 +42,14 @@
                                     <td class="col-md-4">{{ $notice->description }}</td>
                                     <td>{{ $notice->created_at->diffForHumans() }}</td>
                                     <td>{{ $notice->updated_at->diffForHumans() }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                    <td class="text-center">
+                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
 
-                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
                                         <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>
