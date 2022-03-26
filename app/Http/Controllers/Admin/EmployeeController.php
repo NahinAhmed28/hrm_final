@@ -111,10 +111,9 @@ class EmployeeController extends Controller
 
     public function bankDetailEdit($employeeID)
     {
-//        dd($employeeID);
 
         $data = [
-//            'details' => Bank_detail::find($employeeID),
+
             'details' => Bank_detail::where('employeeID', $employeeID)->first(),
             'employees' => $this->employeeModel->where('employeeID', $employeeID)->first()
         ];
@@ -130,6 +129,7 @@ class EmployeeController extends Controller
 
     public function bankDetailUpdate(Request $request, $employeeID)
     {
+
 //        dd($employeeID);
 
         $details = Bank_detail::where('employeeID', $employeeID)->first();
@@ -141,7 +141,6 @@ class EmployeeController extends Controller
         $details->ifsc =  $request->ifsc;
         $details->update();
         return back();
-
 
     }
 

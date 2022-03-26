@@ -19,12 +19,37 @@
                         @csrf
                         @method('PUT')
 
+
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email"  value="{{ old('email', $employees->email) }}" placeholder="{{$employees->email}}"  required>
+                                <label for="accountName">Account Name</label>
+
+                                <input type="text" class="form-control"
+                                       id="accountName"
+                                       name="accountName"
+                                       @isset($details)
+                                       value=" {{ old('accountName', $details->accountName) }}"
+                                       placeholder="{{$details->accountName}}"
+                                       @endisset  required>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" class="form-control"
+                                       id="accountNumber"
+                                       name="accountNumber"
+                                       @isset($details)
+                                       value="{{ old('accountNumber', $details->accountNumber) }}"
+                                       placeholder="{{$details->accountNumber}}"
+                                       @endisset required>
                             </div>
                         </div>
+
+{{--                        <div class="form-row">--}}
+{{--                            --}}
+{{--                        </div>--}}
+
+
 
                         <button class="btn btn-info" type="submit">Update Info</button>
                     </form>
