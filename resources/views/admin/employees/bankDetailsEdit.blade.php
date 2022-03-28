@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <form action="{{route('admin.employee.bankDetail.update',$employees->employeeID)}}" method="post" >
                         @csrf
-                        @method('PUT')
+                        @method('POST')
 
 
                         <div class="form-row">
@@ -41,7 +41,41 @@
                                        @isset($details)
                                        value="{{ old('accountNumber', $details->accountNumber) }}"
                                        placeholder="{{$details->accountNumber}}"
-                                       @endisset required>
+                                       @endisset >
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="bank">Bank</label>
+                                <input type="text" class="form-control"
+                                       id="bank"
+                                       name="bank"
+                                       @isset($details)
+                                       value="{{ old('bank', $details->bank) }}"
+                                       placeholder="{{$details->bank}}"
+                                       @endisset >
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="pan">Pan</label>
+                                <input type="text" class="form-control"
+                                       id="pan"
+                                       name="pan"
+                                       @isset($details)
+                                       value="{{ old('pan', $details->pan) }}"
+                                       placeholder="{{$details->pan}}"
+                                       @endisset >
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+                                <label for="accountNumber">Branch</label>
+                                <input type="text" class="form-control"
+                                       id="branch"
+                                       name="branch"
+                                       @isset($details)
+                                       value="{{ old('branch', $details->branch) }}"
+                                       placeholder="{{$details->branch}}"
+                                       @endisset >
                             </div>
                         </div>
 

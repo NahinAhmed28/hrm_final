@@ -30,8 +30,8 @@
 													</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <div class="text-inverse-white font-weight-bolder font-size-h5 mb-2 mt-5">Shopping Cart</div>
-                        <div class="font-weight-bold text-inverse-white font-size-sm">Lands, Houses, Ranchos, Farms</div>
+                        <div class="text-inverse-white font-weight-bolder font-size-h5 mb-2 mt-5">Total Employees</div>
+                        <div class="font-weight-bold text-inverse-white font-size-sm">25 employees</div>
                     </div>
                     <!--end::Body-->
                 </a>
@@ -53,8 +53,8 @@
 													</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <div class="text-inverse-info font-weight-bolder font-size-h5 mb-2 mt-5">Apartments</div>
-                        <div class="font-weight-bold text-inverse-info font-size-sm">Flats, Shared Rooms, Duplex</div>
+                        <div class="text-inverse-info font-weight-bolder font-size-h5 mb-2 mt-5">Total Departments</div>
+                        <div class="font-weight-bold text-inverse-info font-size-sm">8 Departments </div>
                     </div>
                     <!--end::Body-->
                 </a>
@@ -78,8 +78,8 @@
 													</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <div class="text-inverse-dark font-weight-bolder font-size-h5 mb-2 mt-5">Sales Stats</div>
-                        <div class="font-weight-bold text-inverse-dark font-size-sm">50% Increased for FY20</div>
+                        <div class="text-inverse-dark font-weight-bolder font-size-h5 mb-2 mt-5">Project List</div>
+                        <div class="font-weight-bold text-inverse-dark font-size-sm">15 Projects Incomplete</div>
                     </div>
                     <!--end::Body-->
                 </a>

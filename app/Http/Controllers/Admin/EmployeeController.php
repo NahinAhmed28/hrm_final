@@ -130,7 +130,10 @@ class EmployeeController extends Controller
     public function bankDetailUpdate(Request $request, $employeeID)
     {
 
-//        dd($employeeID);
+//        dd($request->all());
+//        $details = Bank_detail::findOrFail($employeeID);
+
+
 
         $details = Bank_detail::where('employeeID', $employeeID)->first();
         $details->accountName =  $request->accountName;
@@ -141,6 +144,7 @@ class EmployeeController extends Controller
         $details->ifsc =  $request->ifsc;
         $details->update();
         return back();
+
 
     }
 
