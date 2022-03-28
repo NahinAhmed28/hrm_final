@@ -1,5 +1,5 @@
 
-<div class="aside aside-left  d-flex flex-column flex-row-auto" id="kt_aside">
+<div class="aside aside-left  d-flex flex-column flex-row-auto " id="kt_aside">
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->

@@ -14,9 +14,10 @@
                             </div>
                         </div>
                     </div>
-                    <h5 class="card-title">Item name : {{ $expense->itemName }}</h5>
+
 
                     <div class="card-body">
+                        <h5 class="card-title">Item name : {{ $expense->itemName }}</h5>
                     <p class="card-text">ID : {{ $expense->id }}</p>
                     <p class="card-text">purchaseDate :{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $expense->purchaseDate)->format('d-m-Y') }}</p>
                     <p class="card-text">purchaseFrom : {{ $expense->purchaseFrom }}</p>

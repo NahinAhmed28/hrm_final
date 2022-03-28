@@ -14,10 +14,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card-body">
 
                     <h5 class="card-title"> Notice id : {{ $notices->id }}</h5>
                     <p class="card-text">Title : {{ $notices->title }}</p>
                     <p class="card-text">Description : {{ $notices->description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
