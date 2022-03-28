@@ -135,7 +135,7 @@ class EmployeeController extends Controller
 
 
 
-        $details = Bank_detail::findOrFail('employeeID', $employeeID);
+        $details = Bank_detail::where('employeeID', $employeeID)->first();
         $details->accountName =  $request->accountName;
         $details->accountNumber =  $request->accountNumber;
         $details->bank =  $request->bank;
