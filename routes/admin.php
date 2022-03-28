@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\NoticeboardController;
+use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::get('users/get-data', [UserController::class, 'getData']);
     Route::resource('/users', UserController::class);
     Route::resource('/employees', EmployeeController::class);
+    Route::resource('/salaries', SalaryController::class);
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
     Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');
     Route::post('/employees/bankDetail/update/{id}', [EmployeeController::class, 'bankDetailUpdate'])->name('employee.bankDetail.update');

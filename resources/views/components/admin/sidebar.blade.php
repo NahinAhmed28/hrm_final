@@ -52,10 +52,18 @@
                                         <span style="font-size: 15px;" class="menu-text">Employee list</span>
                                     </a>
                                 </li>
+
                                 <li class="menu-item {{ (Request::is('admin/awards') or Request::is('admin/awards/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                     <a href="{{route('admin.awards.index')}}" class="menu-link">
                                         <i class="menu-icon flaticon2-cup"></i>
                                         <span style="font-size: 15px;" class="menu-text">Award</span>
+                                    </a>
+                                </li>
+
+                                <li class="menu-item {{ (Request::is('admin/employee/salaries') or Request::is('admin/employee/salaries/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                    <a href="{{route('admin.salaries.index')}}" class="menu-link">
+                                        <i class="menu-icon flaticon2-files-and-folders"></i>
+                                        <span style="font-size: 15px;" class="menu-text">Salary</span>
                                     </a>
                                 </li>
                             </ul>

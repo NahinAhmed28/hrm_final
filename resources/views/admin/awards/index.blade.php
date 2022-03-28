@@ -27,12 +27,13 @@
                             <thead >
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">employee ID</th>
-                                <th scope="col">award Name</th>
-                                <th scope="col">gift</th>
-                                <th scope="col">cash Price</th>
-                                <th scope="col">for Month</th>
-                                <th scope="col">for Year</th>
+                                <th scope="col">Employee ID</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Award Name</th>
+                                <th scope="col">Gift</th>
+                                <th scope="col">Cash Price</th>
+                                <th scope="col">For Month</th>
+                                <th scope="col">For Year</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -43,6 +44,7 @@
                                 <tr>
                                     <td> {{$award->id }} </td>
                                     <td> {{$award->employeeID }} </td>
+                                    <td> {{$award->employeeDetails->fullName }} </td>
                                     <td> {{$award->awardName }} </td>
                                     <td> {{$award->gift }} </td>
                                     <td> {{$award->cashPrice }} </td>
