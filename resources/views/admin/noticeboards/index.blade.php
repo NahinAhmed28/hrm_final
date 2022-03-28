@@ -44,7 +44,6 @@
                                     <td>{{ $notice->updated_at->diffForHumans() }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
-
                                         <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
                                         <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
                                             @method('DELETE')
