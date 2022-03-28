@@ -8,6 +8,7 @@ use App\Models\Bank_detail;
 use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -130,11 +131,6 @@ class EmployeeController extends Controller
     public function bankDetailUpdate(Request $request, $employeeID)
     {
 
-//        dd($request->all());
-//        $details = Bank_detail::findOrFail($employeeID);
-
-
-
         $details = Bank_detail::where('employeeID', $employeeID)->first();
         $details->accountName =  $request->accountName;
         $details->accountNumber =  $request->accountNumber;
@@ -142,6 +138,18 @@ class EmployeeController extends Controller
         $details->pan =  $request->pan;
         $details->branch =  $request->branch;
         $details->update();
+
+//        $details = Bank_detail::findOrFail($employeeID);
+//        $details->update([
+//            'accountName' => $request->accountName,
+//            'accountNumber' => $request->accountNumber,
+//            'bank' =>  $request->bank,
+//            'pan' => $request->pan,
+//            'branch' => $request->branch,
+//            'created_at' => Carbon::now(),
+//            'updated_at' => Carbon::now(),
+//        ]);
+
         return back();
 
 
