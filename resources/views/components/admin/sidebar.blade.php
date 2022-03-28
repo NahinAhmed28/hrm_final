@@ -49,7 +49,7 @@
                                 <li class="menu-item {{ (Request::is('admin/employees') or Request::is('admin/employees/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                     <a href="{{route('admin.employees.index')}}" class="menu-link">
                                         <i class="menu-icon flaticon2-list"></i>
-                                        <span style="font-size: 15px;" class="menu-text">Employee list</span>
+                                        <span style="font-size: 15px;" class="menu-text">List</span>
                                     </a>
                                 </li>
 
