@@ -32,6 +32,7 @@
                                 <th scope="col">Department </th>
                                 <th scope="col">Designation </th>
                                 <th scope="col">Salary</th>
+                                <th scope="col">Salary Type</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -46,9 +47,10 @@
                                     <td> {{$employee->getDesignation->department->deptName}} </td>
                                     <td> {{$employee->getDesignation->designation }} </td>
                                     <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>
+                                    <td> {{ isset($employee->getSalary->type)?$employee->getSalary->type:"N/A"}} </td>
 
                                     <td>
-                                        edit
+                                        edit <br> delete
                                     </td>
                                 </tr>
                             @endforeach
