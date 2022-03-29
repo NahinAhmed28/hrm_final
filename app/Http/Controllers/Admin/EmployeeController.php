@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+
 class EmployeeController extends Controller
 {
     protected $employeeModel;
@@ -28,7 +29,7 @@ class EmployeeController extends Controller
     public function index()
     {
 //        $employees = $this->employeeModel->orderBy('id','desc')->simplePaginate(5);
-        $employees = $this->employeeModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5);;
+        $employees = $this->employeeModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5);
         return view('admin.employees.index', compact('employees'));
     }
 
@@ -105,7 +106,6 @@ class EmployeeController extends Controller
             'employees' => $this->employeeModel->where('employeeID', $employeeID)->first()
         ];
 
-
         return view('admin.employees.bankdetails',$data);
 
     }
@@ -119,9 +119,7 @@ class EmployeeController extends Controller
             'employees' => $this->employeeModel->where('employeeID', $employeeID)->first()
         ];
 
-
 //        dd($data);
-
 
         return view('admin.employees.bankDetailsEdit',$data);
 
@@ -131,27 +129,35 @@ class EmployeeController extends Controller
     public function bankDetailUpdate(Request $request, $employeeID)
     {
 
+
+
         $details = Bank_detail::where('employeeID', $employeeID)->first();
-        $details->accountName =  $request->accountName;
-        $details->accountNumber =  $request->accountNumber;
-        $details->bank =  $request->bank;
-        $details->pan =  $request->pan;
-        $details->branch =  $request->branch;
-        $details->update();
 
-//        $details = Bank_detail::findOrFail($employeeID);
-//        $details->update([
-//            'accountName' => $request->accountName,
-//            'accountNumber' => $request->accountNumber,
-//            'bank' =>  $request->bank,
-//            'pan' => $request->pan,
-//            'branch' => $request->branch,
-//            'created_at' => Carbon::now(),
-//            'updated_at' => Carbon::now(),
-//        ]);
+        if ($details!=null){
 
-        return back();
+            $details->accountName =  $request->accountName;
+            $details->accountNumber =  $request->accountNumber;
+            $details->bank =  $request->bank;
+            $details->pan =  $request->pan;
+            $details->branch =  $request->branch;
+            $details->update();
+        }
+        else {
 
+            $value = Bank_detail::create([
+                'employeeID' => $employeeID,
+                'accountName' => $request->accountName,
+                'accountNumber' => $request->accountNumber,
+                'pan'=>$request->pan,
+                'branch'=>$request->branch,
+                'bank'=>$request->bank,
+            ]);
+
+        }
+
+
+
+        return redirect()->route('admin.employee.detail',$employeeID);
 
     }
 

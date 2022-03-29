@@ -58,7 +58,7 @@
                                             <form method="POST" action="{{ route('admin.expenses.destroy' ,  [$expense->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete"
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete"
                                                     {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
                                                 ><i class="fa fa-trash" aria-hidden="true"></i> </button>
                                             </form>

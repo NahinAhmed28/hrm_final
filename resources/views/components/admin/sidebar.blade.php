@@ -31,7 +31,7 @@
                     </a>
                 </li>
 
-                <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*') or Request::is('admin/awards')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">
+                <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*') or Request::is('admin/awards')  or Request::is('admin/salaries/*')  or Request::is('admin/salaries/')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">
 {{--                    <a href="{{route('admin.employees.index')}}" class="menu-link menu-toggle">--}}
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-user"></i>
@@ -60,7 +60,7 @@
                                     </a>
                                 </li>
 
-                                <li class="menu-item {{ (Request::is('admin/employee/salaries') or Request::is('admin/employee/salaries/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <li class="menu-item {{ (Request::is('admin/salaries') or Request::is('admin/salaries/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                     <a href="{{route('admin.salaries.index')}}" class="menu-link">
                                         <i class="menu-icon flaticon2-files-and-folders"></i>
                                         <span style="font-size: 15px;" class="menu-text">Salary</span>

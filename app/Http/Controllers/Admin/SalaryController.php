@@ -4,19 +4,45 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Bank_detail;
+use App\Models\Department;
+use App\Models\Designation;
+use App\Models\Employee;
 use App\Models\Salary;
 use Illuminate\Http\Request;
 
 class SalaryController extends Controller
 {
+    protected $employeeModel;
+    protected $designationModel;
+    protected $departmentModel;
+    protected $salaryModel;
+
+    public function __construct(Employee $employee, Designation $designation, Department $department, Salary $salary)
+    {
+        $this->employeeModel = $employee;
+        $this->designationModel = $designation;
+        $this->departmentModel = $department;
+        $this->salaryModel = $salary;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('admin.salaries.index');
+        $data = [
+            'designations' =>$this->designationModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
+            'departments' =>$this->departmentModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
+            'employees' => $this->employeeModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
+            'salaries' => $this->salaryModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5)
+
+        ];
+
+        return view('admin.salaries.index',$data);
     }
 
     /**

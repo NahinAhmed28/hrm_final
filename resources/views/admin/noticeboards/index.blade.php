@@ -43,19 +43,18 @@
                                     <td>{{ $notice->created_at->diffForHumans() }}</td>
                                     <td>{{ $notice->updated_at->diffForHumans() }}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
-                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
+                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View Student"><button class="btn btn-outline-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit Student"><button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
                                         <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
                 <!--end::Card-->

@@ -28,14 +28,31 @@
                             <tr>
 
                                 <th scope="col">Employee ID</th>
-                                <th scope="col">Employee Name</th>
-                                <th scope="col">Department Name</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department </th>
+                                <th scope="col">Designation </th>
                                 <th scope="col">Salary</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
 
                             <tbody>
+
+                            @foreach($employees as $employee)
+                                <tr>
+
+                                    <td> {{$employee->employeeID }} </td>
+                                    <td> {{$employee->fullName }} </td>
+                                    <td> {{$employee->getDesignation->department->deptName}} </td>
+                                    <td> {{$employee->getDesignation->designation }} </td>
+                                    <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>
+
+                                    <td>
+                                        edit
+                                    </td>
+                                </tr>
+                            @endforeach
+
 
                             </tbody>
                         </table>

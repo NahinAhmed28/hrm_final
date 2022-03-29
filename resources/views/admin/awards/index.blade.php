@@ -53,7 +53,7 @@
                                     <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ route('admin.awards.destroy',[$award->id]) }}" title="View Student">
-                                            <button class="btn btn-danger btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                                            <button class="btn btn-outline-danger btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
                                             </button></a>
                                     </td>
 
