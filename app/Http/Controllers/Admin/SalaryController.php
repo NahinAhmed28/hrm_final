@@ -35,10 +35,8 @@ class SalaryController extends Controller
 
     {
         $data = [
-            'designations' =>$this->designationModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
-            'departments' =>$this->departmentModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
+
             'employees' => $this->employeeModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5),
-            'salaries' => $this->salaryModel->orderBy('id','desc')->orderBy('id','asc')->simplePaginate(5)
 
         ];
 
