@@ -10,6 +10,7 @@ class Employee extends \Eloquent implements Authenticatable
     use AuthenticableTrait;
 
     // Don't forget to fill this array
+    private static $faker;
     protected $fillable = ['employeeID','designation','fullName','fatherName','gender','email','password','date_of_birth','mobileNumber','localAddress','profileImage','joiningDate','permanentAddress'];
     protected $guarded = ['id'];
 

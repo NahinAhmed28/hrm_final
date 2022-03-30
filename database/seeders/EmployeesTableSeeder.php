@@ -4,6 +4,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker;
+use Illuminate\Support\Str;
+
 class EmployeesTableSeeder extends Seeder
 {
     /**
@@ -63,5 +65,17 @@ class EmployeesTableSeeder extends Seeder
 
             ]);
         }
+
+        for ($i=0; $i < 20; $i++){
+
+            \App\Models\Salary::create([
+                'employeeID' =>   $employeeID[rand(0,19)],
+                'type'  => Str::random(5),
+                'salary'       => '1000',
+                'remarks'  => rand(100,4000),
+            ]);
+
+        }
+
     }
 }

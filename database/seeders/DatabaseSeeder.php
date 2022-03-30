@@ -53,6 +53,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ExpenseTableSeeder::class);
         $this->command->info('ExpenseTableSeeder table seeded!');
 
+//        $this->call(SalarySeeder::class);
+//        $this->command->info('SalarySeeder table seeded!');
+
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
