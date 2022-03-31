@@ -3,6 +3,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Hash;
 
 class Employee extends \Eloquent implements Authenticatable
@@ -41,7 +42,7 @@ class Employee extends \Eloquent implements Authenticatable
      */
     public function getSalary()
     {
-        return $this->hasMany(Salary::class, 'employeeID', 'employeeID');
+        return $this->hasOne(Salary::class, 'employeeID', 'employeeID');
     }
 
     /**

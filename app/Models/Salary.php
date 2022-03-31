@@ -10,4 +10,5 @@ class Salary extends \Eloquent
 //    protected $fillable = [];
     protected $table = 'salary';
     protected $guarded = ['id'];
+
 }

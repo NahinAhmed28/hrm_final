@@ -66,12 +66,12 @@ class EmployeesTableSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i < 20; $i++){
+        for ($i=0; $i < 30; $i++){
 
             \App\Models\Salary::create([
                 'employeeID' =>   $employeeID[rand(0,19)],
                 'type'  => Str::random(5),
-                'salary'       => '1000',
+                'salary'       => $faker->numberBetween($min = 10000, $max = 90000) ,
                 'remarks'  => rand(100,4000),
             ]);
 
