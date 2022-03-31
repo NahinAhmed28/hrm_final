@@ -28,11 +28,26 @@
                                 <th scope="col">Designations</th>
                                 <th scope="col">Department</th>
                                 <th scope="col">created at</th>
-                                <th scope="col">action</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
+                            @foreach($designations as $designation)
+
+                            <tr>
+                                <td>{{$designation->id}} </td>
+                                <td>{{$designation->designation}} </td>
+                                <td>{{$designation->departments->deptName}} </td>
+                                <td>{{$designation->created_at}} </td>
+                                <td>
+                                    <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View Student">
+                                        <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-edit" aria-hidden="true"></i>
+                                        </button></a>
+                                </td>
+                                </td>
+                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

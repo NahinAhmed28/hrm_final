@@ -44,7 +44,7 @@
 
                                     <td> {{$employee->employeeID }} </td>
                                     <td> {{$employee->fullName }} </td>
-                                    <td> {{$employee->getDesignation->department->deptName}} </td>
+                                    <td> {{$employee->getDesignation->departments->deptName}} </td>
                                     <td> {{$employee->getDesignation->designation }} </td>
 {{--                                    <td> {{$employee->getSalary->salary }} </td>--}}
                                     <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>

@@ -1,5 +1,5 @@
 
-<div class="aside aside-left  d-flex flex-column flex-row-auto " id="kt_aside">
+<div class="aside aside-left  d-flex flex-column flex-row-auto " id="kt_aside" style="width:185px ">
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
@@ -23,14 +23,12 @@
                         <span style="font-size: 15px;font-weight: bold" class="menu-text news">Dashboard</span>
                     </a>
                 </li>
-
                 <li class="menu-item menu-item-submenu {{ (Request::is('admin/departments') or Request::is('admin/departments/*') or Request::is('admin/designations') or Request::is('admin/designations/*')) ? 'menu-item-open' : '' }}" aria-haspopup="true">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-shield"></i>
                         <span style="font-size: 15px;" class="menu-text">Departments</span>
                         <i class="menu-arrow"></i>
                     </a>
-
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
@@ -53,7 +51,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </li>
 
                 <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*') or Request::is('admin/awards')  or Request::is('admin/salaries/*')  or Request::is('admin/salaries')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">

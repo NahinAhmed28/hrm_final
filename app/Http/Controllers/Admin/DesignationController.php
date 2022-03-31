@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class DesignationController extends Controller
 {
+    protected $departmentModel;
+
+    public function __construct(Designation $designation)
+    {
+        $this->designationModel = $designation;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,9 @@ class DesignationController extends Controller
      */
     public function index()
     {
-        return view('admin.designations.index');
+
+        $designations = $this->designationModel->orderBy('id','asc')->simplePaginate(5);
+        return view('admin.designations.index', compact('designations'));
     }
 
     /**
