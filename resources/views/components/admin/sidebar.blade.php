@@ -24,10 +24,11 @@
                     </a>
                 </li>
 
-                <li class="menu-item menu-item-submenu{{ (Request::is('admin/departments') or Request::is('admin/departments/*') or Request::is('admin/designations') or Request::is('admin/designations/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.departments.index')}}" class="menu-link  menu-toggle">
+                <li class="menu-item menu-item-submenu {{ (Request::is('admin/departments') or Request::is('admin/departments/*') or Request::is('admin/designations') or Request::is('admin/designations/*')) ? 'menu-item-open' : '' }}" aria-haspopup="true">
+                    <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-shield"></i>
                         <span style="font-size: 15px;" class="menu-text">Departments</span>
+                        <i class="menu-arrow"></i>
                     </a>
 
                     <div class="menu-submenu">
@@ -37,6 +38,12 @@
                                 <span class="menu-link">
                                     <span class="menu-text">Actions</span>
                                 </span>
+                            </li>
+                            <li class="menu-item {{ (Request::is('admin/departments') or Request::is('admin/departments/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{route('admin.departments.index')}}" class="menu-link">
+                                    <i class="menu-icon flaticon2-list"></i>
+                                    <span style="font-size: 15px;" class="menu-text">List</span>
+                                </a>
                             </li>
                             <li class="menu-item {{ (Request::is('admin/designations') or Request::is('admin/designations/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="{{route('admin.designations.index')}}" class="menu-link">
