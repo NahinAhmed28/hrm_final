@@ -55,6 +55,9 @@
                             @endforeach
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                            {!! $notices->links() !!}
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

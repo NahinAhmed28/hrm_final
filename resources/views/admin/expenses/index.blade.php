@@ -60,7 +60,7 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete"
                                                     {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
-                                                ><i class="fa fa-trash" aria-hidden="true"></i> </button>
+                                                ><i class="fa fa-trash-alt" aria-hidden="true"></i> </button>
                                             </form>
 
 
@@ -73,6 +73,10 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <div class="d-flex justify-content-center">
+                            {!! $expenses->links() !!}
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->
