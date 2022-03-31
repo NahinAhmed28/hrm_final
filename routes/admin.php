@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\EmployeeController;
@@ -28,6 +29,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::post('/employees/bankDetail/update/{id}', [EmployeeController::class, 'bankDetailUpdate'])->name('employee.bankDetail.update');
 
     Route::resource('/departments', DepartmentController::class);
+    Route::resource('/designations', DesignationController::class);
     Route::resource('/expenses', ExpenseController::class);
     Route::resource('/awards', AwardController::class);
     Route::resource('/noticeboards', NoticeboardController::class);

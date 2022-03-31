@@ -11,4 +11,5 @@ class Salary extends \Eloquent
     protected $table = 'salary';
     protected $guarded = ['id'];
 
+
 }

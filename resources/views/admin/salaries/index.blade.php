@@ -55,7 +55,7 @@
                                             <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                             </button></a>
                                         <a href="{{ route('admin.salaries.destroy',[$employee->id]) }}" title="View Student">
-                                            <button class="btn btn-outline-info btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                                            <button class="btn btn-outline-danger btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
                                             </button></a>
                                     </td>
                                 </tr>
