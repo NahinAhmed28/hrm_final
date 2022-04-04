@@ -24,7 +24,7 @@ class NoticeboardController extends Controller
      */
     public function index()
     {
-        $notices = $this->noticeboardModel->orderBy('id','asc')->simplePaginate(5);
+        $notices = $this->noticeboardModel->orderBy('id','desc')->simplePaginate(5);
         return view('admin.noticeboards.index', compact('notices'));
     }
 
@@ -103,8 +103,9 @@ class NoticeboardController extends Controller
      * @param  \App\Models\Noticeboard  $noticeboard
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Noticeboard $noticeboard)
+    public function destroy($id)
     {
-        //
+        $this->noticeboardModel->destroy($id);
+        return  back();
     }
 }
