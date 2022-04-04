@@ -73,7 +73,7 @@
                                         <div class="form-group">
                                             <label class="form-control-label">Purchase Date<span class="text-danger">*</span></label>
                                             <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" name="purchaseDate" value="{{ old('purchaseDate') }}" placeholder="purchaseDate"/>
+                                                <input type='text' class="form-control  {{ $errors->has('purchaseDate') ? 'is-invalid' : '' }}" name="purchaseDate" value="{{ old('purchaseDate', $expense->purchaseDate->diffForHumans()) }}" placeholder="purchaseDate"/>
                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
