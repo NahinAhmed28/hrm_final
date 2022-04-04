@@ -110,7 +110,7 @@ class SalaryController extends Controller
      */
     public function destroy($employeeID)
     {
-         $this->salaryModel->where('employeeID', $employeeID)->destroy($employeeID);
+         $this->salaryModel->where('employeeID', $employeeID)->delete();
         return redirect()->route('admin.salaries.index');
     }
 }
