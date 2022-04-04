@@ -72,17 +72,24 @@ class EmployeeController extends Controller
     }
 
 
-    public function show($id)
+    public function show($employeeID)
     {
-        $department = $this->employeeModel->find($id);
-        return view('admin.departments.show', compact('department'));
+
+
+        $data = [
+            'employees' => $this->employeeModel->where('employeeID', $employeeID)->first(),
+        ];
+
+        return view('admin.employees.show', $data);
     }
 
 
-    public function edit($id)
+    public function edit($employeeID)
     {
-        $department = $this->employeeModel->find($id);
-        return view('admin.departments.edit', compact('department'));
+        $data = [
+            'employees' => $this->employeeModel->where('employeeID', $employeeID)->first(),
+        ];
+        return view('admin.employees.edit',$data);
     }
 
 

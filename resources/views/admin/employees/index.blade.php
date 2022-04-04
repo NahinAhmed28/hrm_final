@@ -30,15 +30,16 @@
                                 <th scope="col">Employee ID</th>
                                 <th scope="col">Profile Image</th>
                                 <th scope="col">Full Name</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Mobile Number</th>
-                                <th scope="col" style="width: 10%">Date of birth</th>
+                                {{--<th scope="col">Gender</th>--}}
+                                {{--<th scope="col" style="width: 10%">Date of birth</th>--}}
                                 <th scope="col">Designation</th>
-                                <th scope="col">Joining Date</th>
-                                <th scope="col">Local Address</th>
+                                {{--<th scope="col">Joining Date</th>--}}
+                                <th scope="col" >Local Address</th>
                                 <th scope="col">Permanent Address</th>
                                 <td scope="col"> Banck Details</td>
+                                {{--<th scope="col">Mobile</th>--}}
                                 <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
 
@@ -49,16 +50,24 @@
                                     <td> {{$employee->employeeID }} </td>
                                     <td> {{$employee->profileImage }} </td>
                                     <td> {{$employee->fullName }} </td>
-                                    <td> {{$employee->gender }} </td>
-                                    <td> {{$employee->mobileNumber }} </td>
-                                    <td > {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>
-                                    <td> {{$employee->getDesignation->designation }} </td>
-                                    <td> {{$employee->joiningDate }} </td>
-                                    <td> {{$employee->localAddress }} </td>
-                                    <td> {{$employee->permanentAddress }} </td>
-                                    <td><a href="{{route('admin.employee.detail',$employee->employeeID)}}" >Click Here</a></td>
+                                    {{--<td> {{$employee->gender }} </td>--}}
+                                    {{--<td > {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employee->date_of_birth)->format('d-m-Y') }} </td>--}}
+                                    <td  class="col-sm-2"> {{$employee->getDesignation->designation }} </td>
+                                    {{--<td> {{$employee->joiningDate }} </td>--}}
+                                    <td class="col-sm-2"> {{$employee->localAddress }} </td>
+                                    <td class="col-sm-2"> {{$employee->permanentAddress }} </td>
+                                    <td class="col-sm-0"><a href="{{route('admin.employee.detail',$employee->employeeID)}}">View</a></td>
+                                    {{--<td> {{$employee->mobileNumber }} </td>--}}
                                     <td> <span class="badge badge-success">{{$employee->status == 0 ? '' : 'Active' }} </span>
                                         <span class="badge badge-danger">{{$employee->status == 1 ? '' : 'Inactive' }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin.employees.edit',[$employee->employeeID]) }}" title="Edit">
+                                            <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                            </button></a>
+                                        <a href="{{ route('admin.employees.show',[$employee->employeeID]) }}" title="View">
+                                            <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </button></a>
                                     </td>
                                 </tr>
                             @endforeach

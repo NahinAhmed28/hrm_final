@@ -37,10 +37,10 @@
                                         <td> {{$department->deptName }} </td>
                                         <td>{{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</td>
                                         <td>
-                                            <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="Edit Student">
+                                            <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="Edit">
                                                 <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                                 </button></a>
-                                            <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View Student">
+                                            <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View">
                                                 <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button></a>
                                         </td>

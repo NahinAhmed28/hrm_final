@@ -41,7 +41,7 @@
                                 <td>{{$designation->departments->deptName}} </td>
                                 <td>{{$designation->created_at}} </td>
                                 <td>
-                                    <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View Student">
+                                    <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View">
                                         <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-edit" aria-hidden="true"></i>
                                         </button></a>
                                 </td>

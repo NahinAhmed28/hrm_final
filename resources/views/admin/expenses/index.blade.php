@@ -49,10 +49,10 @@
 
                                         <td>{{ \Carbon\Carbon::parse($expense->created_at)->diffForHumans() }}</td>
                                         <td>
-                                            <a href="{{ route('admin.expenses.edit',[$expense->id]) }}" title="View Student">
-                                                <button class="btn btn-outline-warning btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                            <a href="{{ route('admin.expenses.edit',[$expense->id]) }}" title="Edit">
+                                                <button class="btn btn-outline-info btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                                 </button></a>
-                                            <a href="{{ route('admin.expenses.show',[$expense->id]) }}" title="View Student">
+                                            <a href="{{ route('admin.expenses.show',[$expense->id]) }}" title="View">
                                                 <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button></a>
                                             <form method="POST" action="{{ route('admin.expenses.destroy' ,  [$expense->id]) }}" accept-charset="UTF-8" style="display:inline">
@@ -62,8 +62,6 @@
                                                     {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
                                                 ><i class="fa fa-trash-alt" aria-hidden="true"></i> </button>
                                             </form>
-
-
                                         </td>
                                         <td> <span class="badge badge-success">{{$expense->status == 0 ? '' : 'Active' }} </span>
                                             <span class="badge badge-danger">{{$expense->status == 1 ? '' : 'Inactive' }}</span>

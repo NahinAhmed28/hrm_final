@@ -15,11 +15,10 @@
                     </div>
                     <div class="card-body">
 
-{{--employee details of bank--}}
-
+                        {{--employee details of bank--}}
                         <h5 class="card-title">Employee Name :  @isset($details) {{$details->employeeDetails->fullName}}  @endisset</h5>
                         <p class="card-text">Account Name :  @isset($details){{$details->accountName}}  @endisset</p>
-{{--                        <img src="{{asset('uploads/postFiles/'.$posts->file_path)}}" width="150">--}}
+                        {{--<img src="{{asset('uploads/postFiles/'.$posts->file_path)}}" width="150">--}}
                         <p class="card-text">Account Number : @isset($details){{$details->accountNumber}}  @endisset</p>
                         <p class="card-text">Bank :  @isset($details){{$details->bank}}  @endisset</p>
                         <p class="card-text">Pan :  @isset($details){{$details->bank}}  @endisset</p>
