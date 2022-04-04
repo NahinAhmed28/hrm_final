@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Department;
 use App\Models\Designation;
 use Illuminate\Http\Request;
 
 class DesignationController extends Controller
 {
-    protected $departmentModel;
+    protected $designationModel;
 
     public function __construct(Designation $designation)
     {
@@ -65,9 +66,14 @@ class DesignationController extends Controller
      * @param  \App\Models\Designation  $designation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Designation $designation)
+    public function edit($id)
     {
-        //
+        $data = [
+            'designation' =>  $this->designationModel->find($id),
+            'department' =>Department::get(),
+        ];
+
+        return view('admin.designations.edit',$data);
     }
 
     /**
@@ -88,8 +94,9 @@ class DesignationController extends Controller
      * @param  \App\Models\Designation  $designation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Designation $designation)
+    public function destroy($id)
     {
-        //
+        $this->designationModel->find($id)->delete();
+        return redirect()->route('admin.designations.index');
     }
 }
