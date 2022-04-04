@@ -84,7 +84,7 @@ class SalaryController extends Controller
     public function edit($employeeID)
     {
         $data = [
-            'salaries' => $this->salaryModel->find($employeeID),
+            'salaries' => $this->salaryModel->where('employeeID', $employeeID)->first(),
         ];
 
         return view('admin.salaries.edit',$data);
@@ -106,12 +106,11 @@ class SalaryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Salary  $salary
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($employeeID)
     {
-        $data = [
-            'salaries' => $this->salaryModel->find($id),
-        ];
+         $this->salaryModel->where('employeeID', $employeeID)->destroy($employeeID);
+        return redirect()->route('admin.salaries.index');
     }
 }
