@@ -95,11 +95,16 @@ class SalaryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Salary  $salary
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $employeeID)
     {
+        $salary =  $this->salaryModel->where('employeeID', $employeeID)->update([
+                'salary' => $request->salary,
+                'type' => $request->type
+        ]);
 
+        return redirect()->route('admin.salaries.index');
     }
 
     /**
