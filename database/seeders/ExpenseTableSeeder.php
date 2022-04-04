@@ -22,7 +22,7 @@ class ExpenseTableSeeder extends Seeder
 
         for ($i=0; $i < 20; $i++) {
         \App\Models\Expense::create([
-            'itemName'    => '123456',
+            'itemName'    => $faker->name,
             'purchaseDate'      =>  $faker->dateTime(),
             'purchaseFrom'         =>  $faker->firstName,
             'price'      =>  $faker->randomDigit,

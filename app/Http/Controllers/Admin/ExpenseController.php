@@ -31,7 +31,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        $expenses = $this->expenseModel->orderBy('id','asc')->simplePaginate(5);
+        $expenses = $this->expenseModel->orderBy('id','desc')->simplePaginate(5);
         return view('admin.expenses.index', compact('expenses'));
 
     }
@@ -89,6 +89,7 @@ class ExpenseController extends Controller
         $expense->purchaseFrom =  $request->purchaseFrom;
         $expense->price =  $request->price;
         $expense->bill =  $request->bill;
+        $expense->status =  $request->status;
         $expense->status =  $request->status;
         $expense->update();
         return back();

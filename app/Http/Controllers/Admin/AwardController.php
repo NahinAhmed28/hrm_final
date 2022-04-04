@@ -31,7 +31,7 @@ class AwardController extends Controller
      */
     public function index()
     {
-        $awards = $this->awardModel->orderBy('id','asc')->simplePaginate(5);
+        $awards = $this->awardModel->orderBy('id','desc')->simplePaginate(5);
         return view('admin.awards.index', compact('awards'));
 
     }
@@ -68,7 +68,6 @@ class AwardController extends Controller
    $value = $this->awardModel->create([
             'awardName' => $request->awardName,
             'gift' => $request->gift,
-            'password'=>Hash::make($request->password),
             'cashPrice'=>$request->cashPrice,
             'forMonth'=>$request->forMonth,
             'forYear'=>$request->forYear,
@@ -78,7 +77,7 @@ class AwardController extends Controller
 
 
 
-        $value->employeeDetails()->attach(implode($request->input('employeeID',[]),","));
+//        $value->employeeDetails()->attach(implode($request->input('employeeID',[]),","));
         DB::commit();
 
 
@@ -132,8 +131,9 @@ class AwardController extends Controller
      * @param  \App\Models\Award  $award
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Award $award)
+    public function destroy($id)
     {
-        //
+        $this->awardModel->destroy($id);
+        return  back();
     }
 }

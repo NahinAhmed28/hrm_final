@@ -52,9 +52,13 @@
                                     <td> {{$award->forYear }} </td>
                                     <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('admin.awards.destroy',[$award->id]) }}" title="Delete">
-                                            <button class="btn btn-outline-danger btn-sm"> <i class="fa fa-trash-alt" aria-hidden="true"></i>
-                                            </button></a>
+
+                                        <form method="POST" action="{{ route('admin.awards.destroy' ,  $award->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </form>
+
                                     </td>
 
                                 </tr>

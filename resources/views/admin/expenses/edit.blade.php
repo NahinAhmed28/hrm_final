@@ -67,6 +67,21 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-sm-2 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Purchase Date<span class="text-danger">*</span></label>
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" name="purchaseDate" value="{{ old('purchaseDate') }}" placeholder="purchaseDate"/>
+                                                <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-sm-2 col-md-6">
                                     <div class="form-group">
                                         <label for="exampleSelect1">Status<span class="text-danger">*</span></label>
