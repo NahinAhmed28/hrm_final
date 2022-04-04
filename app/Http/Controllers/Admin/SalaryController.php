@@ -79,11 +79,15 @@ class SalaryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Salary  $salary
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(Salary $salary)
+    public function edit($employeeID)
     {
-        //
+        $data = [
+            'salaries' => $this->salaryModel->find($employeeID),
+        ];
+
+        return view('admin.salaries.edit',$data);
     }
 
     /**
@@ -93,9 +97,9 @@ class SalaryController extends Controller
      * @param  \App\Models\Salary  $salary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Salary $salary)
+    public function update(Request $request, $employeeID)
     {
-        //
+
     }
 
     /**
@@ -104,8 +108,10 @@ class SalaryController extends Controller
      * @param  \App\Models\Salary  $salary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Salary $salary)
+    public function destroy($id)
     {
-        //
+        $data = [
+            'salaries' => $this->salaryModel->find($id),
+        ];
     }
 }
