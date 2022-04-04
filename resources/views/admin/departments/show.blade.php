@@ -15,8 +15,13 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">department name : {{ $department->deptName }}</h5>
+                        <h5 class="card-title">Department Name : {{ $department->deptName }}</h5>
                         <p class="card-text">ID : {{ $department->id }}</p>
+                        <p class="card-text">Status :
+                            <span class="badge badge-success">{{$department->status == 1 ? '' : 'Active' }} </span>
+                            <span class="badge badge-danger">{{$department->status == 2 ? '' : 'Inactive' }}</span>
+
+                        </p>
                         <p class="card-text">Created At : {{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</p>
                     </div>
                 </div>

@@ -27,7 +27,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Designations</th>
                                 <th scope="col">Department</th>
-                                <th scope="col">created at</th>
+                                <th scope="col">Created At</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -39,7 +39,7 @@
                                 <td>{{$designation->id}} </td>
                                 <td>{{$designation->designation}} </td>
                                 <td>{{$designation->departments->deptName}} </td>
-                                <td>{{$designation->created_at}} </td>
+                                <td>{{$designation->created_at->toFormattedDateString()}} </td>
                                 <td>
                                     <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View">
                                         <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-edit" aria-hidden="true"></i>

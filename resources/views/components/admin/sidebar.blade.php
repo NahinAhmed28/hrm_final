@@ -45,7 +45,7 @@
                             </li>
                             <li class="menu-item {{ (Request::is('admin/designations') or Request::is('admin/designations/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="{{route('admin.designations.index')}}" class="menu-link">
-                                    <i class="menu-icon flaticon2-list"></i>
+                                    <i class="menu-icon flaticon2-graphic-design"></i>
                                     <span style="font-size: 15px;" class="menu-text">Designations</span>
                                 </a>
                             </li>
@@ -84,7 +84,7 @@
 
                                 <li class="menu-item {{ (Request::is('admin/salaries') or Request::is('admin/salaries/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                     <a href="{{route('admin.salaries.index')}}" class="menu-link">
-                                        <i class="menu-icon flaticon2-files-and-folders"></i>
+                                        <i class="menu-icon flaticon2-tools-and-utensils"></i>
                                         <span style="font-size: 15px;" class="menu-text">Salary</span>
                                     </a>
                                 </li>

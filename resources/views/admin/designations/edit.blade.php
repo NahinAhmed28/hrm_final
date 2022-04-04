@@ -31,6 +31,18 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="col-sm-2 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Designation<span class="text-danger">*</span></label>
+                                            <input type="text" name="designation" class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}" value="{{ old('designation', $designation->designation) }}" placeholder="Your Designation Name" />
+                                            @if ($errors->has('designations'))
+                                                <div class="invalid-feedback">{{ $errors->first('name') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer text-center">
