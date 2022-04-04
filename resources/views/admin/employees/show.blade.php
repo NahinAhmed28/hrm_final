@@ -10,7 +10,7 @@
                         {{--                        <h3 class="card-title">{{$pageTitle}}</h3>--}}
                         <div class="card-toolbar">
                             <div class="example-tools justify-content-center">
-                                <a href="{{route('admin.expenses.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Employee</a>
+                                <a href="{{route('admin.employees.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Employee</a>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     <p class="card-text">Designation : @isset($employees){{ $employees->getDesignation->designation }}  @endisset</p>
                     <p class="card-text">Local Address : @isset($employees){{ $employees->localAddress }}  @endisset</p>
                     <p class="card-text">Permanent Address : @isset($employees){{ $employees->permanentAddress }}  @endisset</p>
-                    <p class="card-text"> Banck Details :<a href="{{route('admin.employee.detail',$employees->employeeID)}}">View</a></p>
+                    <p class="card-text"> Bank Details :<a href="{{route('admin.employee.detail',$employees->employeeID)}}"> View</a></p>
 
                     <p class="card-text">status :
                         <span class="badge badge-success">@isset($employees){{$employees->status == 0 ? '' : 'Active' }}@endisset </span>

@@ -36,7 +36,7 @@
                                 {{--<th scope="col">Joining Date</th>--}}
                                 <th scope="col" >Local Address</th>
                                 <th scope="col">Permanent Address</th>
-                                <td scope="col"> Banck Details</td>
+                                <td scope="col">Bank <br>Details</td>
                                 {{--<th scope="col">Mobile</th>--}}
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
