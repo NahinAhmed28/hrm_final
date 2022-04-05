@@ -80,9 +80,10 @@ class NoticeboardController extends Controller
      * @param  \App\Models\Noticeboard  $noticeboard
      * @return \Illuminate\Http\Response
      */
-    public function edit(Noticeboard $noticeboard)
+    public function edit($id)
     {
-        //
+        $notices = $this->noticeboardModel->find($id);
+        return view('admin.noticeboards.edit', compact('notices'));
     }
 
     /**
@@ -92,9 +93,13 @@ class NoticeboardController extends Controller
      * @param  \App\Models\Noticeboard  $noticeboard
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Noticeboard $noticeboard)
+    public function update(Request $request, $id)
     {
-        //
+        $notices =  $this->noticeboardModel->find($id);
+        $notices->title =  $request->title;
+        $notices->description =  $request->description;
+        $notices->update();
+        return redirect()->route('admin.noticeboards.index');
     }
 
     /**
