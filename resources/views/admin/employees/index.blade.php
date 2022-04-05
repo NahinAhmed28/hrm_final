@@ -28,13 +28,13 @@
                             <tr>
 
                                 <th scope="col">Employee ID</th>
-                                <th scope="col">Profile Image</th>
+{{--                                <th scope="col">Profile Image</th>--}}
                                 <th scope="col">Full Name</th>
                                 <th scope="col">Designation</th>
-                                <th scope="col" >Local Address</th>
-                                <th scope="col">Permanent Address</th>
-                                <th scope="col">Status</th>
+{{--                                <th scope="col" >Local Address</th>--}}
+{{--                                <th scope="col">Permanent Address</th>--}}
                                 <th scope="col">Action</th>
+                                <th scope="col">Status</th>
                             </tr>
                             </thead>
 
@@ -42,22 +42,22 @@
                             @foreach($employees as $employee)
                                 <tr>
 
-                                    <td> {{$employee->employeeID }} </td>
-                                    <td> {{$employee->profileImage }} </td>
+                                    <th scope="row"> {{$employee->employeeID }} </th>
+{{--                                    <td> {{$employee->profileImage }} </td>--}}
                                     <td> {{$employee->fullName }} </td>
                                     <td  class="col-sm-2"> {{$employee->getDesignation->designation }} </td>
-                                    <td class="col-sm-2"> {{$employee->localAddress }} </td>
-                                    <td class="col-sm-2"> {{$employee->permanentAddress }} </td>
-                                    <td> <span class="badge badge-success">{{$employee->status == 0 ? '' : 'Active' }} </span>
-                                        <span class="badge badge-danger">{{$employee->status == 1 ? '' : 'Inactive' }}</span>
-                                    </td>
+{{--                                    <td class="col-sm-2"> {{$employee->localAddress }} </td>--}}
+{{--                                    <td class="col-sm-2"> {{$employee->permanentAddress }} </td>--}}
                                     <td>
-                                        <a href="{{ route('admin.employees.edit',[$employee->employeeID]) }}" title="Edit">
+                                    <a href="{{ route('admin.employees.edit',[$employee->employeeID]) }}" title="Edit">
                                             <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                             </button></a>
-                                        <a href="{{ route('admin.employees.show',[$employee->employeeID]) }}" title="View">
+                                    <a href="{{ route('admin.employees.show',[$employee->employeeID]) }}" title="View">
                                             <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
                                             </button></a>
+                                    </td>
+                                    <td> <span class="badge badge-success">{{$employee->status == 0 ? '' : 'Active' }} </span>
+                                        <span class="badge badge-danger">{{$employee->status == 1 ? '' : 'Inactive' }}</span>
                                     </td>
                                 </tr>
                             @endforeach

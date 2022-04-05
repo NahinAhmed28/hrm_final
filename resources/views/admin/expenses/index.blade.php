@@ -25,13 +25,13 @@
                         <table class="table table-bordered">
                             <thead >
                             <tr>
-                                <th scope="col">ID</th>
+{{--                                <th scope="col">ID</th>--}}
                                 <th scope="col">itemName</th>
-                                <th scope="col">purchaseDate</th>
-                                <th scope="col">purchaseFrom</th>
+{{--                                <th scope="col">purchaseDate</th>--}}
+{{--                                <th scope="col">purchaseFrom</th>--}}
                                 <th scope="col">price</th>
                                 <th scope="col">bill</th>
-                                <th scope="col">created </th>
+{{--                                <th scope="col">created </th>--}}
                                 <th scope="col">action</th>
                                 <th scope="col">status</th>
                             </tr>
@@ -39,15 +39,15 @@
                             <tbody>
                                 @foreach($expenses as $expense)
                                     <tr>
-                                        <td> {{$expense->id }} </td>
+{{--                                        <td> {{$expense->id }} </td>--}}
                                         <td> {{$expense->itemName }} </td>
 {{--                                        <td> {{$expense->purchaseDate }} </td>--}}
-                                        <td >{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $expense->purchaseDate)->format('d-m-Y') }}  </td>
-                                        <td> {{$expense->purchaseFrom }} </td>
+{{--                                        <td >{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $expense->purchaseDate)->format('d-m-Y') }}  </td>--}}
+{{--                                        <td> {{$expense->purchaseFrom }} </td>--}}
                                         <td> {{$expense->price }} </td>
                                         <td> {{$expense->bill }} </td>
 
-                                        <td>{{ \Carbon\Carbon::parse($expense->created_at)->diffForHumans() }}</td>
+{{--                                        <td>{{ \Carbon\Carbon::parse($expense->created_at)->diffForHumans() }}</td>--}}
                                         <td>
                                             <a href="{{ route('admin.expenses.edit',[$expense->id]) }}" title="Edit">
                                                 <button class="btn btn-outline-info btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>

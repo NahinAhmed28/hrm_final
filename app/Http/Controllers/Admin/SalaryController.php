@@ -84,7 +84,7 @@ class SalaryController extends Controller
     public function edit($employeeID)
     {
         $data = [
-            'salaries' => $this->salaryModel->where('employeeID', $employeeID)->first(),
+            'employees' => $this->employeeModel->where('employeeID', $employeeID)->first(),
         ];
 
         return view('admin.salaries.edit',$data);
@@ -99,10 +99,18 @@ class SalaryController extends Controller
      */
     public function update(Request $request, $employeeID)
     {
-        $salary =  $this->salaryModel->where('employeeID', $employeeID)->update([
-                'salary' => $request->salary,
-                'type' => $request->type
+//        $salary =  $this->salaryModel->where('employeeID', $employeeID)->update([
+//                'salary' => $request->salary,
+//                'type' => $request->type
+//        ]);
+
+        $this->salaryModel->updateOrCreate([
+            'employeeID' => $employeeID,
+        ], [
+            'salary' =>  $request->salary,
+            'type' =>  $request->type,
         ]);
+
 
         return redirect()->route('admin.salaries.index');
     }

@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <!--begin::Form-->
-                    <form action="{{ route('admin.salaries.update', $salaries->employeeID) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.salaries.update', $employees->employeeID) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
@@ -24,7 +24,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Salary<span class="text-danger">*</span></label>
-                                            <input type="text" name="salary" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $salaries->salary) }}" placeholder="salary" />
+                                            <input type="text" name="salary" class="form-control {{ $errors->has('salary') ? 'is-invalid' : '' }}" value=  "{{ isset($employees->getSalary->salary)?old('salary', $employees->getSalary->salary):'N/A' }}" placeholder="salary" />
                                             @if ($errors->has('salary'))
                                                 <div class="invalid-feedback">{{ $errors->first('salary') }}</div>
                                             @endif
@@ -36,7 +36,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Type<span class="text-danger">*</span></label>
-                                            <input type="text" name="type" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $salaries->type) }}" placeholder="type" />
+                                            <input type="text" name="type" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" value= "{{ isset($employees->getSalary->type)?old('salary', $employees->getSalary->type):'N/A' }}"  placeholder="type" />
                                             @if ($errors->has('type'))
                                                 <div class="invalid-feedback">{{ $errors->first('type') }}</div>
                                             @endif
