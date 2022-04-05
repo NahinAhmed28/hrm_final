@@ -24,7 +24,7 @@ class DesignationController extends Controller
     public function index()
     {
 
-        $designations = $this->designationModel->orderBy('id','asc')->simplePaginate(5);
+        $designations = $this->designationModel->orderBy('id','desc')->simplePaginate(5);
         return view('admin.designations.index', compact('designations'));
     }
 

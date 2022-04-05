@@ -25,14 +25,14 @@ class DepartmentController extends Controller
 
     public function index()
     {
-        $departments = $this->departmentModel->orderBy('id','asc')->simplePaginate(5);
+        $departments = $this->departmentModel->orderBy('id','desc')->simplePaginate(5);
         return view('admin.departments.index', compact('departments'));
     }
 
 
     public function create()
     {
-        $departments = $this->departmentModel->orderBy('id','asc')->get();
+        $departments = $this->departmentModel->orderBy('id','desc')->get();
         return view('admin.departments.create', compact('departments'));
 
     }

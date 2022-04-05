@@ -57,6 +57,11 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{--pagination--}}
+                            <div class="d-flex justify-content-center">
+                                {!! $designations->links() !!}
+                            </div>
+                            {{--end pagination--}}
                         </div>
                     </div>
                 </div>

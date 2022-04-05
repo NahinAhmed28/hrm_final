@@ -12,22 +12,12 @@
                         <div class="card-title">
                             <h3 class="card-label">Employees-Salary</h3>
                         </div>
-                        <div class="card-toolbar">
-                            <!--begin::Button-->
-                            {{--                            @can('create', \App\Models\Admin::class)--}}
-                            <a href="{{route('admin.salaries.create')}}" class="btn btn-success">
-                                <i class="flaticon2-plus-1"></i> Add New
-                            </a>
-                        {{--                        @endcan--}}
-                        <!--end::Button-->
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead >
                                 <tr>
-
                                     <th scope="col">Employee ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Department </th>
@@ -42,15 +32,12 @@
 
                                 @foreach($employees as $employee)
                                     <tr>
-
                                         <td> {{$employee->employeeID }} </td>
                                         <td> {{$employee->fullName }} </td>
                                         <td> {{$employee->getDesignation->departments->deptName}} </td>
                                         <td> {{$employee->getDesignation->designation }} </td>
-    {{--                                    <td> {{$employee->getSalary->salary }} </td>--}}
                                         <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>
                                         <td> {{ isset($employee->getSalary->type)?$employee->getSalary->type:"N/A"}} </td>
-
                                         <td>
                                             <a href="{{ route('admin.salaries.edit',[$employee->employeeID]) }}" title="Edit">
                                                 <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
@@ -61,7 +48,6 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </form>
-
                                         </td>
                                     </tr>
                                 @endforeach
