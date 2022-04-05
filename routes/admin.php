@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
-
+//use App\Http\Controllers\Employee\DashboardController;
 
 
 Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
@@ -42,3 +42,6 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::post('/users_password', [UserController::class, 'changePassword'])->name('password.update');
 
 });
+
+
+
