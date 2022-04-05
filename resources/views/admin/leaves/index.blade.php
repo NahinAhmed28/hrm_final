@@ -26,15 +26,15 @@
                             <table class="table table-bordered">
                                 <thead >
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">itemName</th>
-                                    <th scope="col">purchaseDate</th>
-                                    <th scope="col">purchaseFrom</th>
-                                    <th scope="col">price</th>
-                                    <th scope="col">bill</th>
-                                    <th scope="col">created </th>
-                                    <th scope="col">action</th>
-                                    <th scope="col">status</th>
+{{--                                    <th scope="col">ID</th>--}}
+{{--                                    <th scope="col">itemName</th>--}}
+{{--                                    <th scope="col">purchaseDate</th>--}}
+{{--                                    <th scope="col">purchaseFrom</th>--}}
+{{--                                    <th scope="col">price</th>--}}
+{{--                                    <th scope="col">bill</th>--}}
+{{--                                    <th scope="col">created </th>--}}
+{{--                                    <th scope="col">action</th>--}}
+{{--                                    <th scope="col">status</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>

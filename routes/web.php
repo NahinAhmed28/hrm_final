@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
 
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\DepartmentController;
-use App\Http\Controllers\Admin\ExpenseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
