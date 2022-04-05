@@ -53,8 +53,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="col-sm-2 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">

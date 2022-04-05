@@ -20,17 +20,21 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
     Route::post('/login' , [LoginController::class, 'adminLogin'])->name('login');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
     Route::get('users/get-data', [UserController::class, 'getData']);
     Route::resource('/users', UserController::class);
+
     Route::resource('/employees', EmployeeController::class);
     Route::resource('/salaries', SalaryController::class);
     Route::resource('/leaves', LeaveTypeController::class);
+
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
     Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');
     Route::post('/employees/bankDetail/update/{id}', [EmployeeController::class, 'bankDetailUpdate'])->name('employee.bankDetail.update');
 
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/designations', DesignationController::class);
+
     Route::resource('/expenses', ExpenseController::class);
     Route::resource('/awards', AwardController::class);
     Route::resource('/noticeboards', NoticeboardController::class);

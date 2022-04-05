@@ -17,9 +17,9 @@ class DashboardController extends Controller
         return ('employee');
     }
 
-    public function dashboard()
+    public function dashBoard()
     {
-        return ('employee');
+        return view('employee');
     }
 
     /**
