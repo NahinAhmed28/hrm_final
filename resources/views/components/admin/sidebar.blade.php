@@ -53,7 +53,9 @@
                     </div>
                 </li>
 
-                <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*') or Request::is('admin/awards')  or Request::is('admin/salaries/*')  or Request::is('admin/salaries')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">
+                <li class="menu-item menu-item-submenu {{ (Request::is('admin/employees') or Request::is('admin/employees/*')  or Request::is('admin/awards/*')
+                or Request::is('admin/awards')  or Request::is('admin/salaries/*')  or Request::is('admin/salaries')
+                or Request::is('admin/leaves') or Request::is('admin/leaves/*')) ? 'menu-item-open' : ''  }}" aria-haspopup="true">
 {{--                    <a href="{{route('admin.employees.index')}}" class="menu-link menu-toggle">--}}
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-user"></i>
@@ -88,10 +90,16 @@
                                         <span style="font-size: 15px;" class="menu-text">Salary</span>
                                     </a>
                                 </li>
+
+                                <li class="menu-item {{ (Request::is('admin/leaves') or Request::is('admin/leaves/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                    <a href="{{route('admin.leaves.index')}}" class="menu-link">
+                                        <i class="menu-icon flaticon2-black-back-closed-envelope-shape"></i>
+                                        <span style="font-size: 15px;" class="menu-text">Leave Application</span>
+                                    </a>
+                                </li>
                             </ul>
                     </div>
                 </li>
-
 
                 <li class="menu-item {{ (Request::is('admin/expenses') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{route('admin.expenses.index')}}" class="menu-link">

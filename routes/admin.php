@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 
+use App\Http\Controllers\Admin\LeaveTypeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DesignationController;
@@ -24,6 +25,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::resource('/users', UserController::class);
     Route::resource('/employees', EmployeeController::class);
     Route::resource('/salaries', SalaryController::class);
+    Route::resource('/leaves', LeaveTypeController::class);
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
     Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');
     Route::post('/employees/bankDetail/update/{id}', [EmployeeController::class, 'bankDetailUpdate'])->name('employee.bankDetail.update');
