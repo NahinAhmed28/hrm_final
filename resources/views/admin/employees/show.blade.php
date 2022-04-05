@@ -22,7 +22,7 @@
                     <p class="card-text">Full Name : @isset($employees){{ $employees->fullName }}  @endisset</p>
                     <p class="card-text">Gender : @isset($employees){{ $employees->gender }}  @endisset</p>
                     <p class="card-text">Date of birth : @isset($employees) {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employees->date_of_birth)->format('d-m-Y') }} @endisset</p>
-                    <p class="card-text">Joining Date : @isset($employees){{ $employees->getDesignation->joiningDate }}  @endisset</p>
+                    <p class="card-text">Joining Date : @isset($employees){{ $employees->joiningDate }}  @endisset</p>
                     <p class="card-text">Designation : @isset($employees){{ $employees->getDesignation->designation }}  @endisset</p>
                     <p class="card-text">Department : @isset($employees){{ $employees->getDesignation->departments->deptName }}  @endisset</p>
                     <p class="card-text">Local Address : @isset($employees){{ $employees->localAddress }}  @endisset</p>

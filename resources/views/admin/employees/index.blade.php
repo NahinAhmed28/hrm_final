@@ -83,7 +83,7 @@
         <script src="{{asset('assets/global/datatables/datatables.bundle.js')}}"></script>
         <!--end::Page Vendors-->
         <!--begin::Page Scripts(used by this page)-->
-        {{--<script src="{{asset('assets/global/datatables/basic.js')}}"></script>--}}
+        <script src="{{asset('assets/global/datatables/basic.js')}}"></script>
         <!--end::Page Scripts-->
         <script>
             // Your custom JavaScript...
