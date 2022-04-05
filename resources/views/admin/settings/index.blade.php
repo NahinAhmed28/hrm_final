@@ -23,33 +23,34 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead >
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Website</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Logo</th>
-                                <th scope="col">Currency</th>
-                                <th scope="col">Currency icon</th>
-                            </tr>
-                            </thead>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Website</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Logo</th>
+                                    <th scope="col">Currency</th>
+                                    <th scope="col">Currency icon</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            @foreach($settings as $setting)
-                                <td>{{ $setting->id }}</td>
-                                <td>{{ $setting->website }}</td>
-                            <td>{{ $setting->email }}</td>
-                            <td>{{ $setting->name }}</td>
-                            <td>{{ $setting->logo }}</td>
-                            <td>{{ $setting->currency }}</td>
-                            <td>{{ $setting->currency_icon }}</td>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                <tbody>
+                                @foreach($settings as $setting)
+                                    <td>{{ $setting->id }}</td>
+                                    <td>{{ $setting->website }}</td>
+                                <td>{{ $setting->email }}</td>
+                                <td>{{ $setting->name }}</td>
+                                <td>{{ $setting->logo }}</td>
+                                <td>{{ $setting->currency }}</td>
+                                <td>{{ $setting->currency_icon }}</td>
+                                @endforeach
+                                </tbody>
+                            </table>
 
-
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

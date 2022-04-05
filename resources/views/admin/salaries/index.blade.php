@@ -23,54 +23,56 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead >
-                            <tr>
-
-                                <th scope="col">Employee ID</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Department </th>
-                                <th scope="col">Designation </th>
-                                <th scope="col">Salary</th>
-                                <th scope="col">Salary Type</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-
-                            @foreach($employees as $employee)
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
                                 <tr>
 
-                                    <td> {{$employee->employeeID }} </td>
-                                    <td> {{$employee->fullName }} </td>
-                                    <td> {{$employee->getDesignation->departments->deptName}} </td>
-                                    <td> {{$employee->getDesignation->designation }} </td>
-{{--                                    <td> {{$employee->getSalary->salary }} </td>--}}
-                                    <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>
-                                    <td> {{ isset($employee->getSalary->type)?$employee->getSalary->type:"N/A"}} </td>
-
-                                    <td>
-                                        <a href="{{ route('admin.salaries.edit',[$employee->employeeID]) }}" title="Edit">
-                                            <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
-                                            </button>
-                                        </a>
-                                        <form method="POST" action="{{ route('admin.salaries.destroy' ,  $employee->employeeID) }}" accept-charset="UTF-8" style="display:inline">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </form>
-
-                                    </td>
+                                    <th scope="col">Employee ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Department </th>
+                                    <th scope="col">Designation </th>
+                                    <th scope="col">Salary</th>
+                                    <th scope="col">Salary Type</th>
+                                    <th scope="col">Action</th>
                                 </tr>
-                            @endforeach
+                                </thead>
+
+                                <tbody>
+
+                                @foreach($employees as $employee)
+                                    <tr>
+
+                                        <td> {{$employee->employeeID }} </td>
+                                        <td> {{$employee->fullName }} </td>
+                                        <td> {{$employee->getDesignation->departments->deptName}} </td>
+                                        <td> {{$employee->getDesignation->designation }} </td>
+    {{--                                    <td> {{$employee->getSalary->salary }} </td>--}}
+                                        <td> {{ isset($employee->getSalary->salary)?$employee->getSalary->salary:"N/A"}} </td>
+                                        <td> {{ isset($employee->getSalary->type)?$employee->getSalary->type:"N/A"}} </td>
+
+                                        <td>
+                                            <a href="{{ route('admin.salaries.edit',[$employee->employeeID]) }}" title="Edit">
+                                                <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                </button>
+                                            </a>
+                                            <form method="POST" action="{{ route('admin.salaries.destroy' ,  $employee->employeeID) }}" accept-charset="UTF-8" style="display:inline">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
 
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
-                        <div class="d-flex justify-content-center">
-                            {!! $employees->links() !!}
+                            <div class="d-flex justify-content-center">
+                                {!! $employees->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>

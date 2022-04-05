@@ -21,37 +21,39 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered" >
-                            <thead >
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">created at</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($departments as $department)
-                                    <tr>
-                                        <td> {{$department->id }} </td>
-                                        <td> {{$department->deptName }} </td>
-                                        <td>{{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</td>
-                                        <td><span class="badge badge-success">{{$department->status == 0 ? '' : 'Active' }} </span>
-                                            <span class="badge badge-danger">{{$department->status == 1 ? '' : 'Inactive' }}</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="Edit">
-                                                <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
-                                                </button></a>
-                                            <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View">
-                                                <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
-                                                </button></a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" >
+                                <thead >
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">created at</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($departments as $department)
+                                        <tr>
+                                            <td> {{$department->id }} </td>
+                                            <td> {{$department->deptName }} </td>
+                                            <td>{{ \Carbon\Carbon::parse($department->created_at)->diffForHumans() }}</td>
+                                            <td><span class="badge badge-success">{{$department->status == 0 ? '' : 'Active' }} </span>
+                                                <span class="badge badge-danger">{{$department->status == 1 ? '' : 'Inactive' }}</span>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.departments.edit',[$department->id]) }}" title="Edit">
+                                                    <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                    </button></a>
+                                                <a href="{{ route('admin.departments.show',[$department->id]) }}" title="View">
+                                                    <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </button></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

@@ -23,40 +23,42 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead >
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-{{--                                <th scope="col">updated at</th>--}}
-                                <th scope="col" >Action</th>
-                                <th scope="col">created at</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($notices as $notice)
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
                                 <tr>
-                                    <td>{{ $notice->id }}</td>
-                                    <td class="col-sm-2">{{ $notice->title }}</td>
-                                    <td class="col-sm-4">{{ $notice->description }}</td>
-{{--                                    <td>{{ $notice->updated_at->diffForHumans() }}</td>--}}
-                                    <td>
-                                    <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View "><button class="btn btn-outline-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
-                                    <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit "><button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
-                                    <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </form>
-                                    </td>
-                                    <td>{{ $notice->created_at->diffForHumans() }}</td>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">updated at</th>
+                                    <th scope="col" >Action</th>
+                                    <th scope="col">created at</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <div class="d-flex justify-content-center">
-                            {!! $notices->links() !!}
+                                </thead>
+                                <tbody>
+                                @foreach($notices as $notice)
+                                    <tr>
+                                        <td>{{ $notice->id }}</td>
+                                        <td class="col-sm-2">{{ $notice->title }}</td>
+                                        <td class="col-sm-4">{{ $notice->description }}</td>
+                                        <td>{{ $notice->updated_at->diffForHumans() }}</td>
+                                        <td>
+                                        <a href="{{ route('admin.noticeboards.show',[$notice->id]) }}" title="View "><button class="btn btn-outline-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                        <a href="{{ route('admin.noticeboards.edit',[$notice->id])}}" title="Edit "><button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> </button></a>
+                                        <form method="POST" action="{{ route('admin.noticeboards.destroy' ,  [$notice->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </form>
+                                        </td>
+                                        <td>{{ $notice->created_at->diffForHumans() }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-center">
+                                {!! $notices->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>

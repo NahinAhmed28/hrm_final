@@ -21,41 +21,43 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead >
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Designations</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">Created At</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Designations</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Created At</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-                            @foreach($designations as $designation)
+                                @foreach($designations as $designation)
 
-                            <tr>
-                                <td>{{$designation->id}} </td>
-                                <td>{{$designation->designation}} </td>
-                                <td>{{$designation->departments->deptName}} </td>
-                                <td>{{$designation->created_at->toFormattedDateString()}} </td>
-                                <td>
-                                    <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View">
-                                        <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-edit" aria-hidden="true"></i>
-                                        </button>
-                                    </a>
-                                    <form method="POST" action="{{ route('admin.designations.destroy' ,  $designation->id) }}" accept-charset="UTF-8" style="display:inline">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                    </form>
-                                </td>
-                                </td>
-                            </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                <tr>
+                                    <td>{{$designation->id}} </td>
+                                    <td>{{$designation->designation}} </td>
+                                    <td>{{$designation->departments->deptName}} </td>
+                                    <td>{{$designation->created_at->toFormattedDateString()}} </td>
+                                    <td>
+                                        <a href="{{ route('admin.designations.edit',[$designation->id]) }}" title="View">
+                                            <button class="btn btn-outline-primary btn-sm"> <i class="fa fa-edit" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                        <form method="POST" action="{{ route('admin.designations.destroy' ,  $designation->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </form>
+                                    </td>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

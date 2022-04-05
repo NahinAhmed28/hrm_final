@@ -23,54 +23,55 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead >
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Employee ID</th>
-                                <th scope="col">Employee Name</th>
-                                <th scope="col">Award Name</th>
-                                <th scope="col">Gift</th>
-                                <th scope="col">Cash Price</th>
-                                <th scope="col">For Month</th>
-                                <th scope="col">For Year</th>
-                                <th scope="col">Created</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            @foreach($awards as $award)
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
                                 <tr>
-                                    <td> {{$award->id }} </td>
-                                    <td> {{$award->employeeID }} </td>
-                                    <td> {{$award->employeeDetails->fullName }} </td>
-                                    <td> {{$award->awardName }} </td>
-                                    <td> {{$award->gift }} </td>
-                                    <td> {{$award->cashPrice }} </td>
-                                    <td> {{$award->forMonth }} </td>
-                                    <td> {{$award->forYear }} </td>
-                                    <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
-                                    <td>
-
-                                        <form method="POST" action="{{ route('admin.awards.destroy' ,  $award->id) }}" accept-charset="UTF-8" style="display:inline">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </form>
-
-                                    </td>
-
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Employee ID</th>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Award Name</th>
+                                    <th scope="col">Gift</th>
+                                    <th scope="col">Cash Price</th>
+                                    <th scope="col">For Month</th>
+                                    <th scope="col">For Year</th>
+                                    <th scope="col">Created</th>
+                                    <th scope="col">Action</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        {{--pagination--}}
-                        <div class="d-flex justify-content-center">
-                            {!! $awards->links() !!}
-                        </div>
-                        {{--end pagination--}}
+                                </thead>
 
+                                <tbody>
+                                @foreach($awards as $award)
+                                    <tr>
+                                        <td> {{$award->id }} </td>
+                                        <td> {{$award->employeeID }} </td>
+                                        <td> {{$award->employeeDetails->fullName }} </td>
+                                        <td> {{$award->awardName }} </td>
+                                        <td> {{$award->gift }} </td>
+                                        <td> {{$award->cashPrice }} </td>
+                                        <td> {{$award->forMonth }} </td>
+                                        <td> {{$award->forYear }} </td>
+                                        <td>{{ \Carbon\Carbon::parse($award->created_at)->diffForHumans() }}</td>
+                                        <td>
+
+                                            <form method="POST" action="{{ route('admin.awards.destroy' ,  $award->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete " onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </form>
+
+                                        </td>
+
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            {{--pagination--}}
+                            <div class="d-flex justify-content-center">
+                                {!! $awards->links() !!}
+                            </div>
+                            {{--end pagination--}}
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->
