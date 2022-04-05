@@ -14,13 +14,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return ('employee');
-    }
-
-    public function dashBoard()
-    {
         return view('employee');
     }
+
 
     /**
      * Show the form for creating a new resource.
