@@ -25,7 +25,7 @@
                 </li>
 
                 <li class="menu-item {{ Request::is('employee/leaves') ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('employee.leave')}}" class="menu-link">
+                    <a href="{{route('employee.leaves.index')}}" class="menu-link">
                         <i class="menu-icon flaticon2-google-drive-file"></i>
                         <span style="font-size: 15px;font-weight: bold" class="menu-text news">Leave Application</span>
                     </a>

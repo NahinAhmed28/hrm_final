@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\LeaveType;
 use Illuminate\Http\Request;
 
-class LeaveTypeController extends Controller
+class LeaveController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return string
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-       return view('admin.leaves.index');
+        return view('employee.leaves.index');
     }
+
+
 
 
     /**
@@ -26,11 +26,6 @@ class LeaveTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
-    }
-
-    public function empCreate()
     {
         //
     }
@@ -49,10 +44,10 @@ class LeaveTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LeaveType  $leaveType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(LeaveType $leaveType)
+    public function show($id)
     {
         //
     }
@@ -60,10 +55,10 @@ class LeaveTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LeaveType  $leaveType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(LeaveType $leaveType)
+    public function edit($id)
     {
         //
     }
@@ -72,10 +67,10 @@ class LeaveTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LeaveType  $leaveType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LeaveType $leaveType)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -83,10 +78,10 @@ class LeaveTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LeaveType  $leaveType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LeaveType $leaveType)
+    public function destroy($id)
     {
         //
     }
