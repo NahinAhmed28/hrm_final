@@ -28,6 +28,12 @@ class NoticeboardController extends Controller
         return view('admin.noticeboards.index', compact('notices'));
     }
 
+    public function empIndex()
+    {
+        $notices = $this->noticeboardModel->orderBy('id','desc')->simplePaginate(5);
+        return view('employee.noticeboards.index', compact('notices'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -19,6 +19,11 @@ class LeaveTypeController extends Controller
        return view('admin.leaves.index');
     }
 
+    public function empIndex()
+    {
+       return ('employee.leaves.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

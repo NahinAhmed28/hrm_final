@@ -34,8 +34,8 @@ class UserController extends Controller
     public function index() :View
     {
 
-        $users = $this->userModel->get();
-        return view('admin.users.index')->with('users', $users);
+
+        return view('employee.users.index');
 
     }
 
