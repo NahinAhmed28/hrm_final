@@ -8,6 +8,7 @@ use App\Models\Bank_detail;
 use App\Models\Department;
 use App\Models\Designation;
 use App\Models\Employee;
+use App\Models\Salary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -62,14 +63,20 @@ class EmployeeController extends Controller
             'designation'=>$request->designation,
             'date_of_birth'=>$request->date_of_birth,
             'profileImage'=>'default.jpg',
-
         ]);
-        if ($value) {
+
+
+        Salary::updateOrCreate([
+            'employeeID' => $employeeID,
+        ], [
+            'salary' =>  $request->salary,
+            'type' =>  $request->type,
+        ]);
+
+
+
             return back();
-        } else {
-            return back();
-        }
-    }
+           }
 
 
     public function show($employeeID)

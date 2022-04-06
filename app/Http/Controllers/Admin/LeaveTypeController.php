@@ -21,7 +21,7 @@ class LeaveTypeController extends Controller
 
     public function empIndex()
     {
-       return ('employee.leaves.index');
+       return view('employee.leaves.index');
     }
 
     /**
@@ -30,6 +30,11 @@ class LeaveTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    {
+        //
+    }
+
+    public function empCreate()
     {
         //
     }

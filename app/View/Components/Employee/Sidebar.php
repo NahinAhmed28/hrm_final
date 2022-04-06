@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Employee;
 
 use Illuminate\View\Component;
 
@@ -17,12 +17,12 @@ class Sidebar extends Component
     }
 
     /**
-     * Get the view / mosques that represent the component.
+     * Get the view / contents that represent the component.
      *
      * @return \Illuminate\Contracts\View\View|\Closure|string
      */
     public function render()
     {
-        return view('components.admin.sidebar');
+        return view('components.employee.sidebar');
     }
 }

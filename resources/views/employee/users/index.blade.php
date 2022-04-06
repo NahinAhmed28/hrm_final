@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('employee.layouts.app')
 @section('pageTitle')
 
 @section('content')
@@ -24,7 +24,57 @@
                     </div>
                     <div class="card-body">
 
-                    </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Name</label>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Local Address</label>
+                                        {{--                                            <input type="text" class="form-control" placeholder="Home Address" value="Mirpur,Dhaka">--}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Permanent Address</label>
+                                        {{--                                            <input type="text" class="form-control" placeholder="Home Address" value="Mirpur,Dhaka">--}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>City:</label>
+                                        Dhaka
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Country:</label>
+                                        {{--                                            <input type="text" class="form-control" placeholder="Country" value="Bangladesh">--}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{--                                <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>--}}
+
+
                 </div>
                 <!--end::Card-->
             </div>

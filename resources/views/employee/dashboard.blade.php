@@ -7,7 +7,7 @@
     }
 </style>
 
-@extends('admin.layouts.app')
+@extends('employee.layouts.app')
 
 @section('content')
     <div class="container">
