@@ -28,7 +28,7 @@ class NoticeboardController extends Controller
         return view('admin.noticeboards.index', compact('notices'));
     }
 
-    public function empIndex()
+    public function empNoticeIndex()
     {
         $notices = $this->noticeboardModel->orderBy('id','desc')->simplePaginate(5);
         return view('employee.noticeboards.index', compact('notices'));
@@ -78,6 +78,12 @@ class NoticeboardController extends Controller
     {
         $notices = $this->noticeboardModel->find($id);
         return view('admin.noticeboards.show', compact('notices'));
+    }
+
+    public function empNoticeShow($id)
+    {
+        $notices = $this->noticeboardModel->find($id);
+        return view('employee.noticeboards.show', compact('notices'));
     }
 
     /**

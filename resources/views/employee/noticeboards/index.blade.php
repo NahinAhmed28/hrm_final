@@ -23,7 +23,37 @@
                         </div>
                     </div>
                     <div class="card-body">
-
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">updated at</th>
+                                    <th scope="col" >Action</th>
+                                    <th scope="col">created at</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($notices as $notice)
+                                    <tr>
+                                        <td>{{ $notice->id }}</td>
+                                        <td class="col-sm-2">{{ $notice->title }}</td>
+                                        <td class="col-sm-4">{{ $notice->description }}</td>
+                                        <td>{{ $notice->updated_at->diffForHumans() }}</td>
+                                        <td>
+                                            <a href="{{ route('employee.noticeboards.show',[$notice->id]) }}" title="View "><button class="btn btn-outline-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                        </td>
+                                        <td>{{ $notice->created_at->diffForHumans() }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-center">
+                                {!! $notices->links() !!}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--end::Card-->

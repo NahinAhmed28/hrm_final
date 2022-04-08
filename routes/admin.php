@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\NoticeboardController;
 use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\LeaveController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     Route::resource('/employees', EmployeeController::class);
     Route::resource('/salaries', SalaryController::class);
-    Route::resource('/leaves', LeaveTypeController::class);
+    Route::resource('/leaves', LeaveController::class);
 
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
     Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');

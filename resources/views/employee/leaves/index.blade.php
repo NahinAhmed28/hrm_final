@@ -23,52 +23,29 @@
                         </div>
                     </div>
 
-                    <form action="{{ route('employee.leaves.store') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Leave Type<span class="text-danger">*</span></label>
-                                            <input type="text" name="leaveType" class="form-control {{ $errors->has('leaveType') ? 'is-invalid' : '' }}" value="{{ old('leaveType') }}" placeholder=" enter leaveType" />
-                                            @if ($errors->has('leaveType'))
-                                                <div class="invalid-feedback">{{ $errors->first('leaveType') }}</div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead >
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Leave Title</th>
+                                    <th scope="col">Leave Type</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Leave Days</th>
+                                    <th scope="col" >Status</th>
+                                    <th scope="col">created at</th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Leave Days<span class="text-danger">*</span></label>
-                                            <input type="text" name="leaveDays" class="form-control {{ $errors->has('leaveDays') ? 'is-invalid' : '' }}" value="{{ old('leaveDays') }}" placeholder=" enter leaveDays" />
-                                            @if ($errors->has('leaveDays'))
-                                                <div class="invalid-feedback">{{ $errors->first('leaveDays') }}</div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Description<span class="text-danger">*</span></label>
-                                            <input type="text" name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder=" enter description" />
-                                            @if ($errors->has('description'))
-                                                <div class="invalid-feedback">{{ $errors->first('description') }}</div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-center">
+{{--                                {!! $notices->links() !!}--}}
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-success mr-3"> <i class="flaticon2-paperplane"></i>Save</button>
-                            <button type="reset" class="btn btn-danger"><i class="flaticon-close"></i>Cancel</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
                 <!--end::Card-->
             </div>
