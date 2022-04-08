@@ -14,7 +14,7 @@
                         <div class="card-toolbar">
                             <!--begin::Button-->
                     {{--@can('create', \App\Models\User::class)--}}
-                                <a href="{{route('admin.expenses.create')}}" class="btn btn-success">
+                                <a href="{{route('admin.leaves.create')}}" class="btn btn-success">
                                     <i class="flaticon2-plus-1"></i> Add New
                                 </a>
                     {{--@endcan--}}
@@ -22,29 +22,36 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
+                        <div class="table-responsive" >
+                            <table class="table table-bordered" style="margin-left: 20px">
                                 <thead >
                                 <tr>
-{{--                                    <th scope="col">ID</th>--}}
-{{--                                    <th scope="col">itemName</th>--}}
-{{--                                    <th scope="col">purchaseDate</th>--}}
-{{--                                    <th scope="col">purchaseFrom</th>--}}
-{{--                                    <th scope="col">price</th>--}}
-{{--                                    <th scope="col">bill</th>--}}
-{{--                                    <th scope="col">created </th>--}}
-{{--                                    <th scope="col">action</th>--}}
-{{--                                    <th scope="col">status</th>--}}
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Leave Title</th>
+                                    <th scope="col">Leave Type</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Leave Days</th>
+                                    <th scope="col">Application Issued at</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                @foreach($leaves as $leave)
+                                    <tr>
+                                        <td>{{$leave->id}}</td>
+                                        <td>{{$leave->title}}</td>
+                                        <td>{{$leave->description}}</td>
+                                        <td>{{$leave->leaveDays}}</td>
+                                        <td>{{$leave->leaveType}}</td>
+                                        <td>{{$leave->created_at->diffForHumans()}}</td>
+                                        <td>{{$leave->status}}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
-
-{{--                            <div class="d-flex justify-content-center">--}}
-{{--                                {!! $expenses->links() !!}--}}
-{{--                            </div>--}}
+                            <div class="d-flex justify-content-center">
+                                {{--                                {!! $notices->links() !!}--}}
+                            </div>
                         </div>
                     </div>
                 </div>

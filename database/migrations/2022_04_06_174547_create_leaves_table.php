@@ -19,6 +19,7 @@ class CreateLeavesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('leaveDays');
+            $table->string('status')->default('pending');
             $table->unsignedInteger('leaveType');
             $table->foreign('leaveType')
                 ->references('id')->on('leavetypes')

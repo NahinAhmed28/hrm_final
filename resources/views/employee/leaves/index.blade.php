@@ -33,12 +33,22 @@
                                     <th scope="col">Leave Type</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Leave Days</th>
-                                    <th scope="col" >Status</th>
-                                    <th scope="col">created at</th>
+                                    <th scope="col">Application Issued at</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                @foreach($leaves as $leave)
+                                    <tr>
+                                        <td>{{$leave->id}}</td>
+                                        <td>{{$leave->title}}</td>
+                                        <td>{{$leave->description}}</td>
+                                        <td>{{$leave->leaveDays}}</td>
+                                        <td>{{$leave->leaveType}}</td>
+                                        <td>{{$leave->created_at->diffForHumans()}}</td>
+                                        <td>{{$leave->status}}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center">

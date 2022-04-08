@@ -16,7 +16,8 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        return view('employee.leaves.index');
+        $leaves = Leave::get();
+        return view('employee.leaves.index',compact('leaves'));
     }
 
 
