@@ -4,7 +4,7 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">{{now()->format('Y')}}©</span>
-            <a href="https://mcc.com.bd/" target="_blank" class="text-dark-75 text-hover-primary">nahin bappy vai vai production</a>
+            <a href="https://mcc.com.bd/" target="_blank" class="text-dark-75 text-hover-primary">nahin -made with love and care</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->
