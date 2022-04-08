@@ -27,12 +27,13 @@
                                 <thead >
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Leave Title</th>
-                                    <th scope="col">Leave Type</th>
+                                    <th scope="col" class="col-sm-0">Title</th>
+                                    <th scope="col">Type</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Leave Days</th>
-                                    <th scope="col">Application Issued at</th>
+                                    <th scope="col">Leave <br> Days</th>
+                                    <th scope="col">Issued at</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -45,6 +46,7 @@
                                         <td>{{$leave->leaveType}}</td>
                                         <td>{{$leave->created_at->diffForHumans()}}</td>
                                         <td>{{$leave->status}}</td>
+                                        <td> Accept <br> Decline </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

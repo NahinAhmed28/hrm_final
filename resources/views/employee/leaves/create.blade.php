@@ -9,6 +9,14 @@
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b">
                     <div class="card-header flex-wrap py-3">
+                        <div class="card-header">
+                            {{--                        <h3 class="card-title">{{$pageTitle}}</h3>--}}
+                            <div class="card-toolbar">
+                                <div class="example-tools justify-content-center">
+                                    <a href="{{route('employee.leaves.index')}}" class="btn btn-primary mr-3"><i class="flaticon-list-2"></i>Leaves</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-title">
                             <h3 class="card-label">Leaves Applications</h3>
                         </div>
