@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 class Employee extends \Eloquent implements Authenticatable
 {
     use AuthenticableTrait;
+    protected $guard = 'employee';
+
 
     // Don't forget to fill this array
     private static $faker;

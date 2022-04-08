@@ -26,7 +26,7 @@ class LoginController extends Controller
     /**
      * Where to redirect users after login.
      *
-     * @var string
+     * @var
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
@@ -39,6 +39,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:employee')->except('logout');
+
     }
 
     public function adminLogin(Request $request)
@@ -51,6 +53,20 @@ class LoginController extends Controller
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/admin/dashboard');
+        }
+        return "password vul";
+        return back()->withInput($request->only('email', 'remember'));
+    }
+    public function employeeLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('employee')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/employee/dashboard');
         }
         return "password vul";
         return back()->withInput($request->only('email', 'remember'));
