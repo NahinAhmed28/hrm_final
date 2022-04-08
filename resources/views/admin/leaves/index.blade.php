@@ -46,7 +46,23 @@
                                         <td>{{$leave->leaveType}}</td>
                                         <td>{{$leave->created_at->diffForHumans()}}</td>
                                         <td>{{$leave->status}}</td>
-                                        <td> Accept <br> Decline </td>
+                                        <td>
+                                            <form method="POST" action="{{ route('admin.leaves.accept' ,  [$leave->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                                @method('PUT')
+                                                @csrf
+                                                <button type="submit" class="btn btn-success btn-sm" title="Delete Contact"
+                                                    {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
+                                                ><i class="fa fa-trash-o" aria-hidden="true"></i> Accept</button>
+                                            </form>
+
+                                            <form method="POST" action="{{ route('admin.leaves.decline' ,  [$leave->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                                @method('PUT')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact"
+                                                    {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
+                                                ><i class="fa fa-trash-o" aria-hidden="true"></i> Decline</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

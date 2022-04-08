@@ -27,7 +27,10 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     Route::resource('/employees', EmployeeController::class);
     Route::resource('/salaries', SalaryController::class);
+
     Route::resource('/leaves', LeaveController::class);
+    Route::put('/leaves/accept/{id}', [LeaveController::class,'accept'])->name('leaves.accept');
+    Route::put('/leaves/decline/{id}', [LeaveController::class,'decline'])->name('leaves.decline');
 
     Route::get('/employees/bankDetail/{id}', [EmployeeController::class, 'bankDetail'])->name('employee.detail');
     Route::get('/employees/bankDetail/edit/{id}', [EmployeeController::class, 'bankDetailEdit'])->name('employee.bankDetail.edit');

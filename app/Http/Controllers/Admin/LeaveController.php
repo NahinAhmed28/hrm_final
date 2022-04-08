@@ -31,6 +31,30 @@ class LeaveController extends Controller
         //
     }
 
+    public function accept($id)
+    {
+
+//        dd($id);
+
+        leave::where('id', $id)
+            ->update(['status' =>  'Accept']);
+
+        return  redirect()->route('admin.leaves.index');
+
+    }
+    public function decline($id)
+    {
+
+//        dd($id);
+
+        leave::where('id', $id)
+            ->update(['status' =>  'Declined']);
+
+        return  redirect()->route('admin.leaves.index');
+
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

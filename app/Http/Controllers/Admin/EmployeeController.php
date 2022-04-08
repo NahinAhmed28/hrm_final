@@ -46,7 +46,7 @@ class EmployeeController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request,$employeeID)
     {
 //        dd($request->all());
         $value = $this->employeeModel->create([
