@@ -16,7 +16,6 @@ class CreateDesignationTable extends Migration {
 		{
 			$table->increments('id');
 			$table->unsignedInteger('deptID');
-
 			$table->foreign('deptID')
       			  ->references('id')->on('department')
       			  ->onUpdate('cascade')

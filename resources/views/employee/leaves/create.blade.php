@@ -22,10 +22,12 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Leave Type<span class="text-danger">*</span></label>
-                                            <input type="text" name="leaveType" class="form-control {{ $errors->has('leaveType') ? 'is-invalid' : '' }}" value="{{ old('leaveType') }}" placeholder=" enter leaveType" />
-                                            @if ($errors->has('leaveType'))
-                                                <div class="invalid-feedback">{{ $errors->first('leaveType') }}</div>
-                                            @endif
+                                            <select class="form-control js-example-basic-single" id="inputGroupSelect03" name="leaveType" placeholder=" enter leaveType">
+                                                @foreach($leaveTypes as $leaveType)
+                                                    <option value="{{$leaveType->id}}">{{$leaveType->leaveType}}</option>
+                                                @endforeach
+                                            </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +36,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label">Leave Days<span class="text-danger">*</span></label>
-                                            <input type="text" name="leaveDays" class="form-control {{ $errors->has('leaveDays') ? 'is-invalid' : '' }}" value="{{ old('leaveDays') }}" placeholder=" enter leaveDays" />
+                                            <input type="number" name="leaveDays" class="form-control {{ $errors->has('leaveDays') ? 'is-invalid' : '' }}" value="{{ old('leaveDays') }}" placeholder=" enter leaveDays" />
                                             @if ($errors->has('leaveDays'))
                                                 <div class="invalid-feedback">{{ $errors->first('leaveDays') }}</div>
                                             @endif

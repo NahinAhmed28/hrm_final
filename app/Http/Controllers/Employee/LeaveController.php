@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Employee;
 
+use App\Models\LeaveType;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class LeaveController extends Controller
      */
     public function create()
     {
-        return view('employee.leaves.create');
+        $leaveTypes = LeaveType::get();
+        return view('employee.leaves.create',compact('leaveTypes'));
     }
 
     /**
@@ -38,7 +40,7 @@ class LeaveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

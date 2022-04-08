@@ -8,8 +8,8 @@
             <div class="col-md-12">
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b">
-                    <div class="card-header flex-wrap py-3">
-                        <div class="card-title">
+                    <div class="card-header flex-wrap py-3" >
+                        <div class="card-title" style="margin-left: 20px" >
                             <h3 class="card-label">Leaves Applications</h3>
                         </div>
                         <div class="card-toolbar">
@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
+                        <div class="table-responsive" >
+                            <table class="table table-bordered" style="margin-left: 20px">
                                 <thead >
                                 <tr>
                                     <th scope="col">ID</th>
