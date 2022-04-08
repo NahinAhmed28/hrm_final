@@ -47,6 +47,18 @@
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <div class="form-group">
+                                            <label class="form-control-label">Title<span class="text-danger">*</span></label>
+                                            <input type="text" name="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" placeholder=" enter title" />
+                                            @if ($errors->has('title'))
+                                                <div class="invalid-feedback">{{ $errors->first('title') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
                                             <label class="form-control-label">Description<span class="text-danger">*</span></label>
                                             <input type="text" name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder=" enter description" />
                                             @if ($errors->has('description'))

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Employee;
 
+use App\Models\Leave;
 use App\Models\LeaveType;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -36,11 +37,21 @@ class LeaveController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
+
+       Leave::create([
+            'leaveType' => $request->leaveType,
+            'leaveDays' => $request->leaveDays,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+            return back();
+
     }
 
     /**
