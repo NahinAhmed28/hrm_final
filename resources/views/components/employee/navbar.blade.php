@@ -1,5 +1,5 @@
 @php
-    $user = auth('admin')->user();
+    $user = auth('employee')->user();
 @endphp
 
 

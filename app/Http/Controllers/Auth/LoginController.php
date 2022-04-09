@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -54,22 +55,27 @@ class LoginController extends Controller
 
             return redirect()->intended('/admin/dashboard');
         }
-        return "password vul";
-        return back()->withInput($request->only('email', 'remember'));
+        return "admin password vul";
+//        return back()->withInput($request->only('email', 'remember'));
     }
+
+
     public function employeeLogin(Request $request)
     {
+//        dd($request->all());
+
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
 
+
         if (Auth::guard('employee')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/employee/dashboard');
+            return redirect()->route('employee.dashboard');
         }
-        return "password vul";
-        return back()->withInput($request->only('email', 'remember'));
+        return "employee password vul";
+//        return back()->withInput($request->only('email', 'remember'));
     }
 
 }

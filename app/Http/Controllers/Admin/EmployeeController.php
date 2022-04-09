@@ -46,7 +46,7 @@ class EmployeeController extends Controller
     }
 
 
-    public function store(Request $request,$employeeID)
+    public function store(Request $request)
     {
 //        dd($request->all());
         $value = $this->employeeModel->create([
@@ -64,15 +64,6 @@ class EmployeeController extends Controller
             'date_of_birth'=>$request->date_of_birth,
             'profileImage'=>'default.jpg',
         ]);
-
-
-        Salary::updateOrCreate([
-            'employeeID' => $employeeID,
-        ], [
-            'salary' =>  $request->salary,
-            'type' =>  $request->type,
-        ]);
-
 
 
             return back();

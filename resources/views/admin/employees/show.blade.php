@@ -20,6 +20,7 @@
                         <h5 class="card-title">Image :  @isset($employees){{ $employees->profileImage }}  @endisset</h5>
                     <p class="card-text">ID : @isset($employees){{ $employees->id }}  @endisset </p>
                     <p class="card-text">Full Name : @isset($employees){{ $employees->fullName }}  @endisset</p>
+                    <p class="card-text">EMAIL : @isset($employees){{ $employees->email }}  @endisset</p>
                     <p class="card-text">Gender : @isset($employees){{ $employees->gender }}  @endisset</p>
                     <p class="card-text">Date of birth : @isset($employees) {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $employees->date_of_birth)->format('d-m-Y') }} @endisset</p>
                     <p class="card-text">Joining Date : @isset($employees){{ $employees->joiningDate }}  @endisset</p>
