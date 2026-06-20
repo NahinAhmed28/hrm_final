@@ -1,14 +1,25 @@
 # HRM Final
 
-HRM Final is a Laravel-based human-resource management project. It appears to be a final or completed version of an HRM application focused on administrative HR workflows.
+HRM Final is a Laravel-based human-resource management project, likely representing a final iteration of an HRM workflow.
 
-## Project Details
+## Features
 
-- Repository: `NahinAhmed28/hrm_final`
-- Default branch: `master`
-- Visibility: public
-- Project type: Laravel HRM application
-- Main focus: human-resource management features
+- HRM workflow foundation
+- Employee and administrative data management
+- Database-backed records
+- Final/project-ready HR management structure
+
+## Modules
+
+- Employee module: staff records and profile data
+- HR module: leave, attendance, payroll, or related HR workflows when present
+- Admin module: dashboards, settings, and record management
+- Auth module: users, roles, and protected routes
+- Reporting module: summaries, filters, and exports
+
+## System Architecture
+
+The application follows Laravel MVC architecture. Controllers coordinate HR actions, models persist employee/HR records, Blade/Vite assets render views, and database migrations define the schema. Optional services can handle notifications, reporting, or imports.
 
 ## Getting Started
 
@@ -22,13 +33,3 @@ npm install
 npm run dev
 php artisan serve
 ```
-
-Configure `.env` for database access, then run migrations if the project includes them.
-
-```bash
-php artisan migrate
-```
-
-## Notes
-
-Add the final feature list, screenshots, default admin credentials for local development, and deployment notes when appropriate.
